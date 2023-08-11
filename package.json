@@ -1,6 +1,6 @@
 {
   "name": "simple-string-ts",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Simple string library for TypeScript",
   "main": "dist/string.js",
   "types": "dist/string.d.ts",
