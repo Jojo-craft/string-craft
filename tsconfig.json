@@ -2,12 +2,13 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "removeComments": true,
-    "preserveConstEnums": true,
     "outDir": "./dist",
     "strict": true,
     "sourceMap": true,
-    "noImplicitReturns": true
+    "removeComments": true,
+    "noImplicitReturns": true,
+    "noEmitOnError": true,
+    "declaration": true
   },
   "include": [
     "src/**/*"

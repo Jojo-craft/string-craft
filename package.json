@@ -1,14 +1,21 @@
 {
-  "name": "string-ts",
+  "name": "simple-string-ts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple string library for TypeScript",
   "main": "dist/string.js",
-  "typings": "src/string.ts",
+  "types": "dist/string.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "eslint . --ext .ts"
   },
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "string",
+    "angular"
+  ],
+  "files": ["dist", "LICENSE", "README.md", "package.json"],
   "author": "Joann JOUSSELIN",
   "license": "MIT",
   "devDependencies": {

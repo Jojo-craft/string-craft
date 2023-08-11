@@ -14,13 +14,12 @@
     "plugin:import/typescript"
   ],
   "rules": {
-    "no-console": 1,
+    "no-console": "error",
     "prettier/prettier": [
       "error",
       {
         "singleQuote": true,
-        "trailingComma": "es5",
-        "printWidth": 110,
+        "printWidth": 120,
         "semi": true
       }
     ]
