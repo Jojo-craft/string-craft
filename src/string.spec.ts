@@ -136,4 +136,52 @@ describe('String', () => {
       expect(String.join(';', 'Bass', 'Guitar')).toBe('Bass;Guitar');
     });
   });
+
+  describe('countWords', () => {
+    it('Should return 0 when input is null', () => {
+      expect(String.countWords(null)).toBe(0);
+    });
+
+    it('Should return 0 when input is undefined', () => {
+      expect(String.countWords(undefined)).toBe(0);
+    });
+
+    it('Should return 0 when input is blank', () => {
+      expect(String.countWords(' ')).toBe(0);
+    });
+
+    it('Should return 0 when input is empty', () => {
+      expect(String.countWords('')).toBe(0);
+    });
+
+    it('Should have 1 word of 1 letter', () => {
+      expect(String.countWords('a')).toBe(1);
+    });
+
+    it('Should have 1 word', () => {
+      expect(String.countWords('hello')).toBe(1);
+    });
+
+    it('Should have 2 words separate by blank', () => {
+      expect(String.countWords('Hello world')).toBe(2);
+    });
+
+    it('Should have 4 words with special characters', () => {
+      expect(String.countWords('hello - all the world ! WAIT!')).toBe(5);
+    });
+  });
+
+  // TODO : FEATURE LIST:
+
+  // 1: isDigit => check only digit
+
+  // 2: isAlpha => check only alpha
+
+  // 3: Checks whether data contains only alpha and digit characters. (Alphanumeric)
+  // isAlphaDigit('year2020'); => true
+  // isAlphaDigit('1448'); => true
+  // isAlphaDigit('40-20'); => false
+
+  // 4: retourne les mots d'une phrase dans un tableau
+  // words('welcome to Earth'); // => ['welcome', 'to', 'Earth']
 });

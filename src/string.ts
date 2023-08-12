@@ -142,4 +142,28 @@ export class String {
 
     return result;
   }
+
+  /**
+   * Counts the number of words in a sentence.
+   *
+   * @param {StringOrNullOrUndefined} sentence - The input sentence to count words in.
+   * @returns {number} The count of words in the sentence.
+   * @example
+   * console.log(String.countWords("Hello world"));
+   * // Output: 2
+   * @example
+   * console.log(String.countWords("Coding is fun! #JavaScript"));
+   * // Output: 4
+   */
+  static countWords(sentence: StringOrNullOrUndefined): number {
+    if (sentence == undefined || String.isNullOrBlank(sentence)) {
+      return 0;
+    }
+
+    const spaceSeparator = /\s+/;
+    const wordFilter = (word: string): boolean => word != EMPTY_STRING;
+    const nonAlphanumericWordFilter = (word: string): boolean => !/^\W+$/.test(word);
+
+    return sentence.split(spaceSeparator).filter(wordFilter).filter(nonAlphanumericWordFilter).length;
+  }
 }

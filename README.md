@@ -29,7 +29,6 @@ import { String } from 'string-craft';
 ```typescript
 console.log(String.empty);
 // Output: ""
-
 ```
 
 ### Methods
@@ -42,6 +41,7 @@ console.log(String.empty);
 |        `isNotNullOrBlank`         |                                      Reverse of isNullOrBlank method.                                       |
 | [`removeAccents`](#removeAccents) |                                    Removes accents from a given string.                                     |
 |          [`join`](#join)          |             Concatenates an array of strings using the specified separator between each member.             |
+|    [`countWords`](#countWords)    |                                  Counts the number of words in a sentence.                                  |
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
@@ -49,7 +49,6 @@ console.log(String.empty);
 ```typescript
 console.log(String.isNullOrEmpty('value'));
 // Output: false
-
 ```
 
 #### <a id="isNullOrBlank"/> isNullOrBlank
@@ -58,7 +57,6 @@ console.log(String.isNullOrEmpty('value'));
 ```typescript
 console.log(String.isNullOrBlank('  '));
 // Output: true
-
 ```
 
 #### <a id="removeAccents"/> removeAccents
@@ -67,7 +65,6 @@ console.log(String.isNullOrBlank('  '));
 ```typescript
 console.log(String.removeAccents('déjà là'));
 // Output: 'deja la'
-
 ```
 
 #### <a id="join"/> join
@@ -76,5 +73,15 @@ console.log(String.removeAccents('déjà là'));
 ```typescript
 console.log(String.join('; ', 'apple', 'banana', 'orange', 'grape'));
 // Output: 'apple; banana; orange; grape'
+```
 
+#### <a id="countWords"/> countWords
+
+###### Exemple
+```typescript
+console.log(String.countWords('Hello world'));
+// Output: 2
+
+console.log(String.countWords('hello - all the world ! WAIT!'));
+// Output: 5
 ```
