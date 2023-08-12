@@ -1,5 +1,5 @@
 {
-  "name": "simple-string-ts",
+  "name": "string-craft",
   "version": "1.0.0",
   "description": "Simple library to handle string operations with TypeScript",
   "main": "dist/string.js",
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "typescript",
-    "string",
-    "angular"
+    "string"
   ],
   "files": [
     "dist",

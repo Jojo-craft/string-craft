@@ -1,11 +1,12 @@
-# simple-string-ts
+# string-craft
 
-Simple library to handle string operations with TypeScript.
+Simple string manipulation library for TypeScript.
+`string-craft` is a comprehensive TypeScript library designed to simplify and enhance string manipulation tasks.
 
 ## Install
 
 ```shell
-npm i simple-string-ts
+npm i string-craft
 ```
 
 ## Usage
@@ -13,7 +14,7 @@ npm i simple-string-ts
 ### Import
 
 ```typescript
-import { String } from 'simple-string-ts';
+import { String } from 'string-craft';
 ```
 
 ### Fields

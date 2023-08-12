@@ -9,6 +9,7 @@ export class ArgumentNullError implements Error {
 
   constructor(public message: string) {
     this.name = 'ArgumentNullError';
+    this.message = message;
   }
 }
 
