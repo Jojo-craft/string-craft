@@ -9,89 +9,89 @@ describe('String', () => {
   });
 
   describe('isNullOrEmpty', () => {
-    it('Should be true when have empty string', () => {
+    it('Should be true when string is empty', () => {
       expect(String.isNullOrEmpty('')).toBeTruthy();
     });
 
-    it('Should be true when have null', () => {
+    it('Should be true when string is null', () => {
       expect(String.isNullOrEmpty(null)).toBeTruthy();
     });
 
-    it('Should be true when have undefined', () => {
+    it('Should be true when string is undefined', () => {
       expect(String.isNullOrEmpty(undefined)).toBeTruthy();
     });
 
-    it('Should be false when have "value"', () => {
+    it('Should be false when there is a string as input', () => {
       expect(String.isNullOrEmpty('value')).toBeFalsy();
     });
 
-    it('Should be false when have blank value', () => {
+    it('Should be false when input value is blank', () => {
       expect(String.isNullOrEmpty(' ')).toBeFalsy();
     });
   });
 
   describe('isNotNullOrEmpty', () => {
-    it('Should be false when have empty string', () => {
+    it('Should be false when string is empty', () => {
       expect(String.isNotNullOrEmpty('')).toBeFalsy();
     });
 
-    it('Should be false when have null', () => {
+    it('Should be false when string is null', () => {
       expect(String.isNotNullOrEmpty(null)).toBeFalsy();
     });
 
-    it('Should be false when have undefined', () => {
+    it('Should be false when string is undefined', () => {
       expect(String.isNotNullOrEmpty(undefined)).toBeFalsy();
     });
 
-    it('Should be true when have "value"', () => {
+    it('Should be true when there is a string as input', () => {
       expect(String.isNotNullOrEmpty('value')).toBeTruthy();
     });
 
-    it('Should be true when have blank value', () => {
+    it('Should be true when input value is blank', () => {
       expect(String.isNotNullOrEmpty(' ')).toBeTruthy();
     });
   });
 
   describe('isNullOrBlank', () => {
-    it('Should be true when have empty string', () => {
+    it('Should be true when string is empty', () => {
       expect(String.isNullOrBlank('')).toBeTruthy();
     });
 
-    it('Should be true when have null', () => {
+    it('Should be true when string is null', () => {
       expect(String.isNullOrBlank(null)).toBeTruthy();
     });
 
-    it('Should be true when have undefined', () => {
+    it('Should be true when string is undefined', () => {
       expect(String.isNullOrBlank(undefined)).toBeTruthy();
     });
 
-    it('Should be true when have empty blank string', () => {
+    it('Should be true when string is blank', () => {
       expect(String.isNullOrBlank('     ')).toBeTruthy();
     });
 
-    it('Should be false when have "value"', () => {
+    it('Should be false when there is a string as input', () => {
       expect(String.isNullOrBlank('value')).toBeFalsy();
     });
   });
 
   describe('isNotNullOrBlank', () => {
-    it('Should be false when have empty string', () => {
+    it('Should be false when string is empty', () => {
       expect(String.isNotNullOrBlank('')).toBeFalsy();
     });
 
-    it('Should be false when have null', () => {
+    it('Should be false when string is null', () => {
       expect(String.isNotNullOrBlank(null)).toBeFalsy();
     });
 
-    it('Should be false when have undefined', () => {
+    it('Should be false when string is undefined', () => {
       expect(String.isNotNullOrBlank(undefined)).toBeFalsy();
     });
 
-    it('Should be false when have empty blank string', () => {
+    it('Should be false when string is blank', () => {
       expect(String.isNotNullOrBlank('     ')).toBeFalsy();
     });
 
-    it('Should be true when have "value"', () => {
+    it('Should be true when there is a string as input', () => {
       expect(String.isNotNullOrBlank('value')).toBeTruthy();
     });
   });
@@ -115,24 +115,24 @@ describe('String', () => {
   });
 
   describe('join', () => {
-    it('Should not have a separator when it only has one value', () => {
+    it('Should have no separator when it has only one value', () => {
       expect(String.join(';', 'Bass')).toBe('Bass');
     });
 
-    it('Should throw error when have null value', () => {
-      expect(() => String.join(';', 'Bass', null)).toThrowError();
+    it('Should throw an error when it has a null value', () => {
+      expect(() => String.join(';', 'Bass', null)).toThrowError(/Any of the arguments is null or undefined./);
     });
 
-    it('Should throw error when have undefined value', () => {
+    it('Should throw an error when it has a undefined value', () => {
       expect(() => String.join(';', 'Bass', undefined)).toThrowError(/Any of the arguments is null or undefined./);
     });
 
-    it('Should return empty string when has no value', () => {
+    it('Should return an empty string when it has no value', () => {
       const emptyParams: string[] = [];
       expect(String.join(';', ...emptyParams)).toBe('');
     });
 
-    it('Should return values with separator between them', () => {
+    it('Should return value with concatenated values with separator between them', () => {
       expect(String.join(';', 'Bass', 'Guitar')).toBe('Bass;Guitar');
     });
   });
