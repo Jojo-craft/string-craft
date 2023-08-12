@@ -1,7 +1,7 @@
 {
   "name": "string-craft",
   "version": "1.0.1",
-  "description": "Simple library to handle string operations with TypeScript",
+  "description": "Simple string manipulation library for TypeScript",
   "main": "dist/string.js",
   "types": "dist/string.d.ts",
   "scripts": {
