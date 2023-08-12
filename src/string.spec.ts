@@ -4,7 +4,7 @@ import { String } from './string';
 describe('String', () => {
   describe('empty', () => {
     it('Should return empty string ""', () => {
-      expect(String.empty).toBe(' ');
+      expect(String.empty).toBe('');
     });
   });
 
