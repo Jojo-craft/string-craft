@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest';
 import { String } from './string';
 
 describe('String', () => {
-  describe('EMPTY', () => {
+  describe('empty', () => {
     it('Should return empty string ""', () => {
-      expect(String.EMPTY).toBe('');
+      expect(String.empty).toBe('');
     });
   });
 
@@ -111,6 +111,29 @@ describe('String', () => {
 
     it('Should return empty string when input is empty', () => {
       expect(String.removeAccents('')).toBe('');
+    });
+  });
+
+  describe('join', () => {
+    it('Should not have a separator when it only has one value', () => {
+      expect(String.join(';', 'Bass')).toBe('Bass');
+    });
+
+    it('Should throw error when have null value', () => {
+      expect(() => String.join(';', 'Bass', null)).toThrowError();
+    });
+
+    it('Should throw error when have undefined value', () => {
+      expect(() => String.join(';', 'Bass', undefined)).toThrowError(/Any of the arguments is null or undefined./);
+    });
+
+    it('Should return empty string when has no value', () => {
+      const emptyParams: string[] = [];
+      expect(String.join(';', ...emptyParams)).toBe('');
+    });
+
+    it('Should return values with separator between them', () => {
+      expect(String.join(';', 'Bass', 'Guitar')).toBe('Bass;Guitar');
     });
   });
 });
