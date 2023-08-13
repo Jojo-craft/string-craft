@@ -44,6 +44,7 @@ console.log(String.empty);
 |          [`join`](#join)          |             Concatenates an array of strings using the specified separator between each member.             |
 |    [`countWords`](#countWords)    |                                  Counts the number of words in a sentence.                                  |
 |      [`isNumber`](#isNumber)      |                      Indicates whether the specified string is a valid numeric string.                      |
+|           `isNotNumber`           |                                         Reverse of isNumber method.                                         |
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 

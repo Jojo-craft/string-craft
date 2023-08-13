@@ -183,4 +183,13 @@ export class String {
 
     return Number.isInteger(+value);
   }
+
+  /**
+   * Reverse of isNumber method.
+   * @param {StringOrNullOrUndefined} value - The value to check.
+   * @returns {boolean} True if the value is not a numeric string; otherwise, false.
+   */
+  static isNotNumber(value: StringOrNullOrUndefined): boolean {
+    return !String.isNumber(value);
+  }
 }

@@ -205,6 +205,39 @@ describe('String', () => {
     });
   });
 
+  describe('isNotNumber', () => {
+    describe('Should return true when input is not a number', () => {
+      it.each(['value', 'Hello world!', '!', '10234!'])('When input is: "%s"', (input: string) => {
+        expect(String.isNotNumber(input)).toBeTruthy();
+      });
+    });
+
+    it('Should return true when input is null', () => {
+      expect(String.isNotNumber(null)).toBeTruthy();
+    });
+
+    it('Should return true when input is undefined', () => {
+      expect(String.isNotNumber(undefined)).toBeTruthy();
+    });
+
+    it('Should return true when input is empty', () => {
+      expect(String.isNotNumber('')).toBeTruthy();
+    });
+
+    it('Should return true when input is blank', () => {
+      expect(String.isNotNumber(' ')).toBeTruthy();
+    });
+
+    describe('Should return false when input is a number', () => {
+      it.each(['1', '10', '0', '-10', '999999', '100000066859', '-1234325983456983'])(
+        'When input is: "%s"',
+        (input: string) => {
+          expect(String.isNotNumber(input)).toBeFalsy();
+        },
+      );
+    });
+  });
+
   // TODO : FEATURE LIST:
 
   // 1: isAlpha => check only alpha
