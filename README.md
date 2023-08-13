@@ -1,9 +1,9 @@
 ![npm](https://img.shields.io/npm/v/string-craft)
 ![npm](https://img.shields.io/npm/dw/string-craft)
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/build.yml/badge.svg)
-![build](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml/badge.svg)
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/eslint.yml/badge.svg)
-
+![build](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml/badge.svg)
+![codecov](https://codecov.io/gh/Jojo-craft/string-craft/branch/main/graph/badge.svg?token=1G0J9SSRDX)
 
 # string-craft
 
