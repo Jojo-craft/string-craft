@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Run linter, build and run tests 🔧
+      - name: Run linter, build and tests 🔧
         run: | 
           npm ci
           npm run lint
