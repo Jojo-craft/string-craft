@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { String } from './string';
+import { String, StringOrNullOrUndefined } from './string';
 
 describe('String', () => {
   describe('empty', () => {
@@ -9,16 +9,10 @@ describe('String', () => {
   });
 
   describe('isNullOrEmpty', () => {
-    it('Should be true when string is empty', () => {
-      expect(String.isNullOrEmpty('')).toBeTruthy();
-    });
-
-    it('Should be true when string is null', () => {
-      expect(String.isNullOrEmpty(null)).toBeTruthy();
-    });
-
-    it('Should be true when string is undefined', () => {
-      expect(String.isNullOrEmpty(undefined)).toBeTruthy();
+    describe('Should be true when string is:', () => {
+      it.each([null, undefined, ''])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNullOrEmpty(input)).toBeTruthy();
+      });
     });
 
     it('Should be false when there is a string as input', () => {
@@ -31,16 +25,10 @@ describe('String', () => {
   });
 
   describe('isNotNullOrEmpty', () => {
-    it('Should be false when string is empty', () => {
-      expect(String.isNotNullOrEmpty('')).toBeFalsy();
-    });
-
-    it('Should be false when string is null', () => {
-      expect(String.isNotNullOrEmpty(null)).toBeFalsy();
-    });
-
-    it('Should be false when string is undefined', () => {
-      expect(String.isNotNullOrEmpty(undefined)).toBeFalsy();
+    describe('Should be false when string is:', () => {
+      it.each([null, undefined, ''])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotNullOrEmpty(input)).toBeFalsy();
+      });
     });
 
     it('Should be true when there is a string as input', () => {
@@ -53,20 +41,10 @@ describe('String', () => {
   });
 
   describe('isNullOrBlank', () => {
-    it('Should be true when string is empty', () => {
-      expect(String.isNullOrBlank('')).toBeTruthy();
-    });
-
-    it('Should be true when string is null', () => {
-      expect(String.isNullOrBlank(null)).toBeTruthy();
-    });
-
-    it('Should be true when string is undefined', () => {
-      expect(String.isNullOrBlank(undefined)).toBeTruthy();
-    });
-
-    it('Should be true when string is blank', () => {
-      expect(String.isNullOrBlank('     ')).toBeTruthy();
+    describe('Should be true when string is:', () => {
+      it.each([null, undefined, '', '     '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNullOrBlank(input)).toBeTruthy();
+      });
     });
 
     it('Should be false when there is a string as input', () => {
@@ -75,20 +53,10 @@ describe('String', () => {
   });
 
   describe('isNotNullOrBlank', () => {
-    it('Should be false when string is empty', () => {
-      expect(String.isNotNullOrBlank('')).toBeFalsy();
-    });
-
-    it('Should be false when string is null', () => {
-      expect(String.isNotNullOrBlank(null)).toBeFalsy();
-    });
-
-    it('Should be false when string is undefined', () => {
-      expect(String.isNotNullOrBlank(undefined)).toBeFalsy();
-    });
-
-    it('Should be false when string is blank', () => {
-      expect(String.isNotNullOrBlank('     ')).toBeFalsy();
+    describe('Should be false when string is:', () => {
+      it.each([null, undefined, '', '     '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotNullOrBlank(input)).toBeFalsy();
+      });
     });
 
     it('Should be true when there is a string as input', () => {
@@ -139,20 +107,10 @@ describe('String', () => {
   });
 
   describe('countWords', () => {
-    it('Should return 0 when input is null', () => {
-      expect(String.countWords(null)).toBe(0);
-    });
-
-    it('Should return 0 when input is undefined', () => {
-      expect(String.countWords(undefined)).toBe(0);
-    });
-
-    it('Should return 0 when input is blank', () => {
-      expect(String.countWords(' ')).toBe(0);
-    });
-
-    it('Should return 0 when input is empty', () => {
-      expect(String.countWords('')).toBe(0);
+    describe('Should return 0 when input is:', () => {
+      it.each([null, undefined, ' ', ''])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.countWords(input)).toBe(0);
+      });
     });
 
     it('Should have 1 word of 1 letter', () => {
@@ -173,30 +131,20 @@ describe('String', () => {
   });
 
   describe('isNumber', () => {
-    describe('Should return false when input is not a number', () => {
+    describe('Should be false when input is not a number', () => {
       it.each(['value', 'Hello world!', '!', '10234!'])('When input is: "%s"', (input: string) => {
         expect(String.isNumber(input)).toBeFalsy();
       });
     });
 
-    it('Should return false when input is null', () => {
-      expect(String.isNumber(null)).toBeFalsy();
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', '  '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNumber(input)).toBeFalsy();
+      });
     });
 
-    it('Should return false when input is undefined', () => {
-      expect(String.isNumber(undefined)).toBeFalsy();
-    });
-
-    it('Should return false when input is empty', () => {
-      expect(String.isNumber('')).toBeFalsy();
-    });
-
-    it('Should return false when input is blank', () => {
-      expect(String.isNumber(' ')).toBeFalsy();
-    });
-
-    describe('Should return true when input is a number', () => {
-      it.each(['1', '10', '0', '-10', '999999', '100000066859', '-1234325983456983'])(
+    describe('Should be true when input is a number', () => {
+      it.each(['1', '10', '0', '-10', '999999', '12345678901234567890', '-12345678901234567890'])(
         'When input is: "%s"',
         (input: string) => {
           expect(String.isNumber(input)).toBeTruthy();
@@ -206,29 +154,19 @@ describe('String', () => {
   });
 
   describe('isNotNumber', () => {
-    describe('Should return true when input is not a number', () => {
+    describe('Should be true when input is not a number', () => {
       it.each(['value', 'Hello world!', '!', '10234!'])('When input is: "%s"', (input: string) => {
         expect(String.isNotNumber(input)).toBeTruthy();
       });
     });
 
-    it('Should return true when input is null', () => {
-      expect(String.isNotNumber(null)).toBeTruthy();
+    describe('Should be true when input is:', () => {
+      it.each([null, undefined, '', '  '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotNumber(input)).toBeTruthy();
+      });
     });
 
-    it('Should return true when input is undefined', () => {
-      expect(String.isNotNumber(undefined)).toBeTruthy();
-    });
-
-    it('Should return true when input is empty', () => {
-      expect(String.isNotNumber('')).toBeTruthy();
-    });
-
-    it('Should return true when input is blank', () => {
-      expect(String.isNotNumber(' ')).toBeTruthy();
-    });
-
-    describe('Should return false when input is a number', () => {
+    describe('Should be false when input is a number', () => {
       it.each(['1', '10', '0', '-10', '999999', '100000066859', '-1234325983456983'])(
         'When input is: "%s"',
         (input: string) => {
@@ -238,16 +176,143 @@ describe('String', () => {
     });
   });
 
+  describe('isAlpha', () => {
+    describe('Should be false when input is a number', () => {
+      it.each(['12', '0', '-1'])('When input is: "%s"', (input: string) => {
+        expect(String.isAlpha(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isAlpha(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input is only with alpha characters:', () => {
+      it.each(['A', 'Hello world'])('"%s"', (input: string) => {
+        expect(String.isAlpha(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input contains at least one special character:', () => {
+      it.each(['Hello!', 'Hello#', '+abc', '`34'])('"%s"', (input: string) => {
+        expect(String.isAlpha(input)).toBeFalsy();
+      });
+    });
+  });
+
+  describe('isNotAlpha', () => {
+    describe('Should be true when input is a number', () => {
+      it.each(['12', '0', '-1'])('When input is: "%s"', (input: string) => {
+        expect(String.isNotAlpha(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be true when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotAlpha(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input is only with alpha characters:', () => {
+      it.each(['A', 'Hello world'])('"%s"', (input: string) => {
+        expect(String.isNotAlpha(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input contains at least one special character:', () => {
+      it.each(['Hello!', 'Hello#', '+abc', '`34'])('"%s"', (input: string) => {
+        expect(String.isNotAlpha(input)).toBeTruthy();
+      });
+    });
+  });
+
+  describe('containsSpecialCharacters', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsSpecialCharacters(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input contains at least one special character:', () => {
+      it.each([
+        '.dot',
+        '/slash',
+        '!exclamation',
+        '"doublequote',
+        '#hash',
+        '$dollar',
+        '%percent',
+        '&ampersand',
+        "'singlequote",
+        '(openparen',
+        ')closeparen',
+        '*asterisk',
+        '+plus',
+        ',comma',
+        '-hyphen',
+        '.dot',
+        '/slash',
+        ':colon',
+        ';semicolon',
+        '<less',
+        '>greater',
+        '=equals',
+        '?question',
+        '@at',
+        '[openbracket',
+        ']closebracket',
+        '\\backslash',
+        '^caret',
+        '_underscore',
+        '`backtick',
+        '{openbrace',
+        '}closebrace',
+        '|pipe',
+        '~tilde',
+      ])('"%s"', (input: string) => {
+        expect(String.containsSpecialCharacters(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when not contains special character:', () => {
+      it.each(['1234', 'ABC', '123ABCdef'])('"%s"', (input: string) => {
+        expect(String.containsSpecialCharacters(input)).toBeFalsy();
+      });
+    });
+  });
+
+  describe('notContainsSpecialCharacters', () => {
+    describe('Should be true when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsSpecialCharacters(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input contains at least one special character:', () => {
+      it.each(['|pipe', '~tilde'])('"%s"', (input: string) => {
+        expect(String.notContainsSpecialCharacters(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when not contains special character:', () => {
+      it.each(['1234', 'ABC', '123ABCdef'])('"%s"', (input: string) => {
+        expect(String.notContainsSpecialCharacters(input)).toBeTruthy();
+      });
+    });
+  });
+
   // TODO : FEATURE LIST:
 
-  // 1: isAlpha => check only alpha
-
-  // 2: hasSpecialCharacters => check if contains special characters
-
-  // 3: Checks whether data contains only alpha and digit characters. (Alphanumeric)
+  // 1: Checks whether data contains only alpha and digit characters. (Alphanumeric)
   // isAlphaDigit('year2020'); => true
   // isAlphaDigit('1448'); => true
   // isAlphaDigit('40-20'); => false
+
+  // 2: containsNumber
+
+  // 3: containsAlpha
 
   // 4: retourne les mots d'une phrase dans un tableau
   // words('welcome to Earth'); // => ['welcome', 'to', 'Earth']

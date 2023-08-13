@@ -169,6 +169,7 @@ export class String {
 
   /**
    * Indicates whether the specified string is a valid numeric string.
+   *
    * @param {StringOrNullOrUndefined} value - The value to check.
    * @returns {boolean} True if the value is a valid numeric string; otherwise, false.
    */
@@ -191,5 +192,66 @@ export class String {
    */
   static isNotNumber(value: StringOrNullOrUndefined): boolean {
     return !String.isNumber(value);
+  }
+
+  /**
+   * Indicates whether a given value consists only of alphabetic characters.
+   *
+   * @param {StringOrNullOrUndefined} value - The value to check.
+   * @returns {boolean} True if the value consists only of alphabetic characters; otherwise, false.
+   */
+  static isAlpha(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    if (String.isNullOrBlank(value)) {
+      return false;
+    }
+
+    if (String.isNumber(value)) {
+      return false;
+    }
+
+    if (String.containsSpecialCharacters(value)) {
+      return false;
+    }
+
+    return !Number.isNaN(value);
+  }
+
+  /**
+   * Reverse of isAlpha method.
+   *
+   * @param {StringOrNullOrUndefined} value - The value to check.
+   * @returns {boolean} False if the value consists only of alphabetic characters; otherwise, true.
+   */
+  static isNotAlpha(value: StringOrNullOrUndefined): boolean {
+    return !String.isAlpha(value);
+  }
+
+  /**
+   * Indicates whether a given string contains at least one special character.
+   *
+   * @param {string} value - The string to check.
+   * @returns {boolean} True if the string contains at least one special character; otherwise, false.
+   */
+  static containsSpecialCharacters(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    const specialCharacters = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?`~]+/;
+    return specialCharacters.test(value);
+  }
+
+  /**
+   * Reverse of containsSpecialCharacters method.
+   *
+   * @param {string} value - The string to check.
+   * @returns {boolean} False if the string contains at least one special character; otherwise, true.
+   */
+  static notContainsSpecialCharacters(value: StringOrNullOrUndefined): boolean {
+    return !String.containsSpecialCharacters(value);
   }
 }
