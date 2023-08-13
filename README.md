@@ -43,6 +43,7 @@ console.log(String.empty);
 | [`removeAccents`](#removeAccents) |                                    Removes accents from a given string.                                     |
 |          [`join`](#join)          |             Concatenates an array of strings using the specified separator between each member.             |
 |    [`countWords`](#countWords)    |                                  Counts the number of words in a sentence.                                  |
+|      [`isNumber`](#isNumber)      |                      Indicates whether the specified string is a valid numeric string.                      |
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
@@ -85,4 +86,24 @@ console.log(String.countWords('Hello world'));
 
 console.log(String.countWords('hello - all the world ! WAIT!'));
 // Output: 5
+```
+
+#### <a id="isNumber"/> isNumber
+
+###### Exemple
+```typescript
+console.log(String.isNumber('Hello world'));
+// Output: false
+
+console.log(String.isNumber(''));
+// Output: false
+
+console.log(String.isNumber('  '));
+// Output: false
+
+console.log(String.isNumber(null));
+// Output: false
+
+console.log(String.isNumber('99'));
+// Output: true
 ```

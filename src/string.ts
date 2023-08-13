@@ -166,4 +166,21 @@ export class String {
 
     return sentence.split(spaceSeparator).filter(wordFilter).filter(nonAlphanumericWordFilter).length;
   }
+
+  /**
+   * Indicates whether the specified string is a valid numeric string.
+   * @param {StringOrNullOrUndefined} value - The value to check.
+   * @returns {boolean} True if the value is a valid numeric string; otherwise, false.
+   */
+  static isNumber(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    if (String.isNullOrBlank(value)) {
+      return false;
+    }
+
+    return Number.isInteger(+value);
+  }
 }

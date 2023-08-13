@@ -172,11 +172,44 @@ describe('String', () => {
     });
   });
 
+  describe('isNumber', () => {
+    describe('Should return false when input is not a number', () => {
+      it.each(['value', 'Hello world!', '!', '10234!'])('When input is: "%s"', (input: string) => {
+        expect(String.isNumber(input)).toBeFalsy();
+      });
+    });
+
+    it('Should return false when input is null', () => {
+      expect(String.isNumber(null)).toBeFalsy();
+    });
+
+    it('Should return false when input is undefined', () => {
+      expect(String.isNumber(undefined)).toBeFalsy();
+    });
+
+    it('Should return false when input is empty', () => {
+      expect(String.isNumber('')).toBeFalsy();
+    });
+
+    it('Should return false when input is blank', () => {
+      expect(String.isNumber(' ')).toBeFalsy();
+    });
+
+    describe('Should return true when input is a number', () => {
+      it.each(['1', '10', '0', '-10', '999999', '100000066859', '-1234325983456983'])(
+        'When input is: "%s"',
+        (input: string) => {
+          expect(String.isNumber(input)).toBeTruthy();
+        },
+      );
+    });
+  });
+
   // TODO : FEATURE LIST:
 
-  // 1: isDigit => check only digit
+  // 1: isAlpha => check only alpha
 
-  // 2: isAlpha => check only alpha
+  // 2: hasSpecialCharacters => check if contains special characters
 
   // 3: Checks whether data contains only alpha and digit characters. (Alphanumeric)
   // isAlphaDigit('year2020'); => true

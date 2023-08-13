@@ -6,9 +6,9 @@
   "types": "dist/string.d.ts",
   "scripts": {
     "build": "tsc",
+    "lint": "eslint . --ext .ts",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "lint": "eslint . --ext .ts"
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [
     "typescript",
