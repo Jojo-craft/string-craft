@@ -1,6 +1,7 @@
 # string-craft
 
 Simple string manipulation library for TypeScript.
+
 `string-craft` is a comprehensive TypeScript library designed to simplify and enhance string manipulation tasks.
 
 ## Install

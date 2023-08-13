@@ -101,6 +101,7 @@ describe('String', () => {
       ['tété', 'tete'],
       ['à côté', 'a cote'],
       ["À l'époque", "A l'epoque"],
+      ['À É Î Ô Û à é î ô û', 'A E I O U a e i o u'],
     ])('Should convert "%s" to "%s"', (input: string, expectedResult: string) => {
       expect(String.removeAccents(input)).toBe(expectedResult);
     });
