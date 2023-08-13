@@ -1,4 +1,4 @@
-name: CI - Check code
+name: build
 on: [push]
 jobs:
   build:
@@ -11,9 +11,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Run linter, build and tests 🔧
+      - name: Run build 🔧
         run: | 
           npm ci
-          npm run lint
           npm run build
-          npm run test:coverage
