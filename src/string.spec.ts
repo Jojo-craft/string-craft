@@ -66,7 +66,7 @@ describe('String', () => {
 
   describe('removeAccents', () => {
     it.each([
-      ['tété', 'tete'],
+      ['tété!', 'tete!'],
       ['à côté', 'a cote'],
       ["À l'époque", "A l'epoque"],
       ['À É Î Ô Û à é î ô û', 'A E I O U a e i o u'],
@@ -386,9 +386,10 @@ describe('String', () => {
   // TODO : FEATURE LIST:
 
   // 1: Checks whether data contains only alpha and digit characters. (Alphanumeric)
-  // isAlphaDigit('year2020'); => true
-  // isAlphaDigit('1448'); => true
-  // isAlphaDigit('40-20'); => false
+  // isAlphaDigit('year2023'); => true
+  // isAlphaDigit('Hello'); => false
+  // isAlphaDigit('1448'); => false
+  // isAlphaDigit('40-abc'); => false
 
   // 2: retourne les mots d'une phrase dans un tableau
   // wordsToArray('welcome to Earth'); // => ['welcome', 'to', 'Earth']
