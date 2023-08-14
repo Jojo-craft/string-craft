@@ -51,6 +51,7 @@ console.log(String.EMPTY);
 |                 [`isNumber`](#isNumber)                 |                        Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                         |
 |                  [`isAlpha`](#isAlpha)                  |                      Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                      |
 | [`containsSpecialCharacter`](#containsSpecialCharacter) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).             |
+|           [`containsNumber`](#containsNumber)           |                Indicates whether the specified string contains at least one numeric digit (reverse with `notcontainsNumber` method).                 |
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
@@ -135,6 +136,17 @@ console.log(String.containsSpecialCharacter('123abc'));
 
 console.log(String.containsSpecialCharacter('123abc/'));
 // Output: true
+```
+
+#### <a id="containsNumber"/> containsNumber
+
+###### Exemple
+```typescript
+console.log(String.containsNumber('^abc1def+'));
+// Output: true
+
+console.log(String.containsNumber('!abc&def/'));
+// Output: false
 ```
 
 ## License

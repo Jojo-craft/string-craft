@@ -12,9 +12,9 @@ export class ArgumentNullError implements Error {
   name: string;
 
   /**
-   Creates an instance of ArgumentNullError.
-   @param {string} message - The error message.
-   */
+   * Creates an instance of ArgumentNullError.
+   * @param {string} message - The error message.
+   * */
   constructor(public message: string) {
     this.name = 'ArgumentNullError';
     this.message = message;
@@ -252,5 +252,28 @@ export class String {
    */
   static notContainsSpecialCharacter(value: StringOrNullOrUndefined): boolean {
     return !String.containsSpecialCharacter(value);
+  }
+
+  /**
+   * Indicates whether the specified string contains at least one numeric digit.
+   * @param {StringOrNullOrUndefined} value - The string value to check.
+   * @returns {boolean} True if the value contains at least one numeric digit; otherwise, false.
+   */
+  static containsNumber(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    const numberRegex = /\d/;
+    return numberRegex.test(value);
+  }
+
+  /**
+   * Reverse of **containsNumber()** method.
+   * @param {StringOrNullOrUndefined} value - The string value to check.
+   * @returns {boolean} False if the value contains at least one numeric digit; otherwise, true.
+   */
+  static notContainsNumber(value: StringOrNullOrUndefined): boolean {
+    return !String.containsNumber(value);
   }
 }

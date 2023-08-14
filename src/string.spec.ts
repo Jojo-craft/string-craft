@@ -303,6 +303,46 @@ describe('String', () => {
     });
   });
 
+  describe('containsNumber', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsNumber(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input contains number:', () => {
+      it.each(['12', 'abc0!', '!@#$%1()'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsNumber(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input not contains number:', () => {
+      it.each(['abc', '!@#$_)(', '!@#$%ABC*()_+'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsNumber(input)).toBeFalsy();
+      });
+    });
+  });
+
+  describe('notContainsNumber', () => {
+    describe('Should be true when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsNumber(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input contains number:', () => {
+      it.each(['12', 'abc0!', '!@#$%1()'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsNumber(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input not contains number:', () => {
+      it.each(['abc', '!@#$_)(', '!@#$%ABC*()_+'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsNumber(input)).toBeTruthy();
+      });
+    });
+  });
+
   // TODO : FEATURE LIST:
 
   // 1: Checks whether data contains only alpha and digit characters. (Alphanumeric)
@@ -310,10 +350,8 @@ describe('String', () => {
   // isAlphaDigit('1448'); => true
   // isAlphaDigit('40-20'); => false
 
-  // 2: containsNumber
+  // 2: containsAlpha
 
-  // 3: containsAlpha
-
-  // 4: retourne les mots d'une phrase dans un tableau
+  // 3: retourne les mots d'une phrase dans un tableau
   // words('welcome to Earth'); // => ['welcome', 'to', 'Earth']
 });
