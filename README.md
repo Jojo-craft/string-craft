@@ -31,7 +31,7 @@ import { String } from 'string-craft';
 |:-----------------:|:-------------------------------------------------------------------------------------------------------------:|
 | [`EMPTY`](#empty) | Represents the empty string. This field is read-only. The value of this field is the zero-length string (""). |
 
-#### <a id="empty"/> Empty
+#### <a id="empty"/> EMPTY
 
 ###### Exemple
 ```typescript
@@ -52,6 +52,7 @@ console.log(String.EMPTY);
 |                  [`isAlpha`](#isAlpha)                  |                      Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                      |
 | [`containsSpecialCharacter`](#containsSpecialCharacter) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).             |
 |           [`containsNumber`](#containsNumber)           |                Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                 |
+|            [`containsAlpha`](#containsAlpha)            |             Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).              |
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
@@ -146,6 +147,17 @@ console.log(String.containsNumber('^abc1def+'));
 // Output: true
 
 console.log(String.containsNumber('!abc&def/'));
+// Output: false
+```
+
+#### <a id="containsAlpha"/> containsAlpha
+
+###### Exemple
+```typescript
+console.log(String.containsAlpha('^123a456+'));
+// Output: true
+
+console.log(String.containsAlpha('!123&456/'));
 // Output: false
 ```
 

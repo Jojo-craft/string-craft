@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed 
 
 - Fields:
-  - **[Breaking change]** rename static readonly field `empty` to `EMPTY`
+  - **[Breaking change]** rename static read-only field `empty` to `EMPTY`
 
 ### Added
 
@@ -18,6 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `isAlpha` | `isNotAlpha`
   - `containsSpecialCharacter` | `notContainsSpecialCharacter`
   - `containsNumber` | `notContainsNumber`
+  - `containsAlpha` | `notContainsAlpha`
+
+### TODO
+
+- Methods:
+  - `isAlphaDigit` | `isNotAlphaDigit`
+  - `wordsToArray`
 
 ## [1.0.1] - 2023-08-13
 

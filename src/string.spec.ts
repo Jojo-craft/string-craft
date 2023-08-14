@@ -343,6 +343,46 @@ describe('String', () => {
     });
   });
 
+  describe('containsAlpha', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsAlpha(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input contains alphabetic character:', () => {
+      it.each(['abc', 'ABC0!', '!@#$%A()'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsAlpha(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input not contains alphabetic character:', () => {
+      it.each(['123', '!@#$_)(', '!@#$%123*()_+'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsAlpha(input)).toBeFalsy();
+      });
+    });
+  });
+
+  describe('notContainsAlpha', () => {
+    describe('Should be true when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsAlpha(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input contains alphabetic character:', () => {
+      it.each(['abc', 'ABC0!', '!@#$%A()'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsAlpha(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input not contains alphabetic character:', () => {
+      it.each(['123', '!@#$_)(', '!@#$%123*()_+'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.notContainsAlpha(input)).toBeTruthy();
+      });
+    });
+  });
+
   // TODO : FEATURE LIST:
 
   // 1: Checks whether data contains only alpha and digit characters. (Alphanumeric)
@@ -350,8 +390,6 @@ describe('String', () => {
   // isAlphaDigit('1448'); => true
   // isAlphaDigit('40-20'); => false
 
-  // 2: containsAlpha
-
-  // 3: retourne les mots d'une phrase dans un tableau
-  // words('welcome to Earth'); // => ['welcome', 'to', 'Earth']
+  // 2: retourne les mots d'une phrase dans un tableau
+  // wordsToArray('welcome to Earth'); // => ['welcome', 'to', 'Earth']
 });

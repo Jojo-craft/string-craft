@@ -276,4 +276,27 @@ export class String {
   static notContainsNumber(value: StringOrNullOrUndefined): boolean {
     return !String.containsNumber(value);
   }
+
+  /**
+   * Indicates whether the specified string contains at least one alphabetic character.
+   * @param {StringOrNullOrUndefined} value - The string value to check.
+   * @returns {boolean} True if the value contains at least one alphabetic character; otherwise, false.
+   */
+  static containsAlpha(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    const alphaRegex = /[a-zA-Z]/;
+    return alphaRegex.test(value);
+  }
+
+  /**
+   * Reverse of **containsAlpha()** method.
+   * @param {StringOrNullOrUndefined} value - The string value to check.
+   * @returns {boolean} False if the value contains at least one alphabetic character; otherwise, true.
+   */
+  static notContainsAlpha(value: StringOrNullOrUndefined): boolean {
+    return !String.containsAlpha(value);
+  }
 }
