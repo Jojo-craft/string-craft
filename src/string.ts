@@ -85,8 +85,8 @@ export class String {
    * @param {string} value - The input string with accents.
    * @returns {string} Returns a new string with accents replaced by their non-accented equivalents.
    * @example
-   * console.log(String.removeAccents('déjà vu'));
-   * // Output: 'deja vu'
+   * String.removeAccents('déjà vu');
+   * // 'deja vu'
    */
   static removeAccents(value: string): string {
     const accentsMap: { [accentedLetter: string]: string } = {
@@ -128,8 +128,8 @@ export class String {
    * @param {...string} values - The array of strings to concatenate.
    * @returns {string} A string that consists of the elements of values delimited by the separator character.
    * @example
-   * console.log(String.join('; ', 'apple', 'banana', 'orange', 'grape'));
-   * // Output: 'apple; banana; orange; grape'
+   * String.join('; ', 'apple', 'banana', 'orange', 'grape');
+   * // 'apple; banana; orange; grape'
    */
   static join(separator: string, ...values: StringOrNullOrUndefined[]): string {
     let result: string = EMPTY_STRING;
@@ -153,11 +153,11 @@ export class String {
    * @param {StringOrNullOrUndefined} sentence - The input sentence to count words in.
    * @returns {number} The count of words in the sentence.
    * @example
-   * console.log(String.countWords("Hello world"));
-   * // Output: 2
+   * String.countWords("Hello world");
+   * // 2
    * @example
-   * console.log(String.countWords("Coding is fun! #JavaScript"));
-   * // Output: 4
+   * String.countWords("Coding is fun! #JavaScript");
+   * // 4
    */
   static countWords(sentence: StringOrNullOrUndefined): number {
     if (sentence == undefined || String.isNullOrBlank(sentence)) {

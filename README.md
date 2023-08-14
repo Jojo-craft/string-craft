@@ -33,10 +33,9 @@ import { String } from 'string-craft';
 
 #### <a id="empty"/> EMPTY
 
-###### Exemple
 ```typescript
-console.log(String.EMPTY);
-// Output: ""
+String.EMPTY;
+// ""
 ```
 
 ### Methods
@@ -56,109 +55,111 @@ console.log(String.EMPTY);
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
-###### Exemple
 ```typescript
-console.log(String.isNullOrEmpty('value'));
-// Output: false
+String.isNullOrEmpty('value');
+// false
+
+String.isNullOrEmpty('  ');
+// false
+
+String.isNullOrEmpty('');
+// true
 ```
 
 #### <a id="isNullOrBlank"/> isNullOrBlank
 
-###### Exemple
 ```typescript
-console.log(String.isNullOrBlank('  '));
-// Output: true
+String.isNullOrBlank('value');
+// false
+
+String.isNullOrBlank('  ');
+// true
+
+String.isNullOrBlank('');
+// true
 ```
 
 #### <a id="removeAccents"/> removeAccents
 
-###### Exemple
 ```typescript
-console.log(String.removeAccents('déjà là'));
-// Output: 'deja la'
+String.removeAccents('déjà là');
+// 'deja la'
 ```
 
 #### <a id="join"/> join
 
-###### Exemple
 ```typescript
-console.log(String.join('; ', 'apple', 'banana', 'orange', 'grape'));
-// Output: 'apple; banana; orange; grape'
+String.join('; ', 'apple', 'banana', 'orange', 'grape');
+// 'apple; banana; orange; grape'
 ```
 
 #### <a id="countWords"/> countWords
 
-###### Exemple
 ```typescript
-console.log(String.countWords('Hello world'));
-// Output: 2
+String.countWords('Hello world');
+// 2
 
-console.log(String.countWords('hello - all the world ! WAIT!'));
-// Output: 5
+String.countWords('hello - all the world ! WAIT!');
+// 5
 ```
 
 #### <a id="isNumber"/> isNumber
 
-###### Exemple
 ```typescript
-console.log(String.isNumber('Hello world'));
-// Output: false
+String.isNumber('Hello world');
+// false
 
-console.log(String.isNumber(''));
-// Output: false
+String.isNumber('');
+// false
 
-console.log(String.isNumber('  '));
-// Output: false
+String.isNumber('  ');
+// false
 
-console.log(String.isNumber(null));
-// Output: false
+String.isNumber(null);
+// false
 
-console.log(String.isNumber('99'));
-// Output: true
+String.isNumber('99');
+// true
 ```
 
 #### <a id="isAlpha"/> isAlpha
 
-###### Exemple
 ```typescript
-console.log(String.isAlpha('123abc'));
-// Output: false
+String.isAlpha('123abc');
+// false
 
-console.log(String.isAlpha('abc'));
-// Output: true
+String.isAlpha('abc');
+// true
 ```
 
 #### <a id="containsSpecialCharacter"/> containsSpecialCharacter
 
-###### Exemple
 ```typescript
-console.log(String.containsSpecialCharacter('123abc'));
-// Output: false
+String.containsSpecialCharacter('123abc');
+// false
 
-console.log(String.containsSpecialCharacter('123abc/'));
-// Output: true
+String.containsSpecialCharacter('123abc/');
+// true
 ```
 
 #### <a id="containsNumber"/> containsNumber
 
-###### Exemple
 ```typescript
-console.log(String.containsNumber('^abc1def+'));
-// Output: true
+String.containsNumber('^abc1def+');
+// true
 
-console.log(String.containsNumber('!abc&def/'));
-// Output: false
+String.containsNumber('!abc&def/');
+// false
 ```
 
 #### <a id="containsAlpha"/> containsAlpha
 
-###### Exemple
 ```typescript
-console.log(String.containsAlpha('^123a456+'));
-// Output: true
+String.containsAlpha('^123a456+');
+// true
 
-console.log(String.containsAlpha('!123&456/'));
-// Output: false
+String.containsAlpha('!123&456/');
+// false
 ```
 
 ## License
