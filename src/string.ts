@@ -4,25 +4,36 @@ export type StringOrNullOrUndefined = Nullable<string> | Undefinable<string>;
 export type Nullable<T> = T | null;
 export type Undefinable<T> = T | undefined;
 
+/**
+ * Custom error class for representing argument null or undefined errors.
+ * @implements {Error}
+ */
 export class ArgumentNullError implements Error {
   name: string;
 
+  /**
+   Creates an instance of ArgumentNullError.
+   @param {string} message - The error message.
+   */
   constructor(public message: string) {
     this.name = 'ArgumentNullError';
     this.message = message;
   }
 }
 
+/**
+ * Utility class for string-related operations.
+ */
 export class String {
   /**
-   * Represents the empty string. This field is read-only.
-   * The value of this field is the zero-length string, "".
+   * Represents the empty string ("").
+   * This field is read-only.
+   * @const {string}
    */
-  static readonly empty: string = EMPTY_STRING;
+  static readonly EMPTY: string = EMPTY_STRING;
 
   /**
    * Indicates whether the specified string is null, undefined or an empty string ("").
-   *
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} True if the value parameter is null or undefined or an empty string (""); otherwise, false.
    */
@@ -36,7 +47,6 @@ export class String {
 
   /**
    * Reverse of isNullOrEmpty method.
-   *
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} False if the value parameter is null or undefined or an empty string (""); otherwise, true.
    */
@@ -46,7 +56,6 @@ export class String {
 
   /**
    * Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters.
-   *
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} True if the value parameter is null or undefined or Empty, or if value consists exclusively of white-space characters; otherwise, false.
    */
@@ -64,7 +73,6 @@ export class String {
 
   /**
    * Reverse of isNullOrBlank method.
-   *
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} False if the value parameter is null or undefined or Empty, or if value consists exclusively of white-space characters; otherwise, true.
    */
@@ -74,7 +82,6 @@ export class String {
 
   /**
    * Removes accents from a given string.
-   *
    * @param {string} value - The input string with accents.
    * @returns {string} Returns a new string with accents replaced by their non-accented equivalents.
    * @example
@@ -115,9 +122,7 @@ export class String {
 
   /**
    * Concatenates an array of strings using the specified separator between each member.
-   *
    * @throws {ArgumentNullError} If any of the arguments is null or undefined.
-   *
    * @param {string} separator - The character to use as a separator between the concatenated values.
    * Separator is included in the returned string only if the value has more than one element.
    * @param {...string} values - The array of strings to concatenate.
@@ -145,7 +150,6 @@ export class String {
 
   /**
    * Counts the number of words in a sentence.
-   *
    * @param {StringOrNullOrUndefined} sentence - The input sentence to count words in.
    * @returns {number} The count of words in the sentence.
    * @example
@@ -169,7 +173,6 @@ export class String {
 
   /**
    * Indicates whether the specified string is a valid numeric string.
-   *
    * @param {StringOrNullOrUndefined} value - The value to check.
    * @returns {boolean} True if the value is a valid numeric string; otherwise, false.
    */
@@ -196,7 +199,6 @@ export class String {
 
   /**
    * Indicates whether a given value consists only of alphabetic characters.
-   *
    * @param {StringOrNullOrUndefined} value - The value to check.
    * @returns {boolean} True if the value consists only of alphabetic characters; otherwise, false.
    */
@@ -222,7 +224,6 @@ export class String {
 
   /**
    * Reverse of isAlpha method.
-   *
    * @param {StringOrNullOrUndefined} value - The value to check.
    * @returns {boolean} False if the value consists only of alphabetic characters; otherwise, true.
    */
@@ -232,7 +233,6 @@ export class String {
 
   /**
    * Indicates whether a given string contains at least one special character.
-   *
    * @param {string} value - The string to check.
    * @returns {boolean} True if the string contains at least one special character; otherwise, false.
    */
@@ -247,7 +247,6 @@ export class String {
 
   /**
    * Reverse of containsSpecialCharacters method.
-   *
    * @param {string} value - The string to check.
    * @returns {boolean} False if the string contains at least one special character; otherwise, true.
    */

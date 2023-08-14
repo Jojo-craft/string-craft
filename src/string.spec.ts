@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest';
 import { String, StringOrNullOrUndefined } from './string';
 
 describe('String', () => {
-  describe('empty', () => {
+  describe('EMPTY', () => {
     it('Should return empty string ""', () => {
-      expect(String.empty).toBe('');
+      expect(String.EMPTY).toBe('');
     });
   });
 
