@@ -228,10 +228,10 @@ describe('String', () => {
     });
   });
 
-  describe('containsSpecialCharacters', () => {
+  describe('containsSpecialCharacter', () => {
     describe('Should be false when input is:', () => {
       it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
-        expect(String.containsSpecialCharacters(input)).toBeFalsy();
+        expect(String.containsSpecialCharacter(input)).toBeFalsy();
       });
     });
 
@@ -272,33 +272,33 @@ describe('String', () => {
         '|pipe',
         '~tilde',
       ])('"%s"', (input: string) => {
-        expect(String.containsSpecialCharacters(input)).toBeTruthy();
+        expect(String.containsSpecialCharacter(input)).toBeTruthy();
       });
     });
 
     describe('Should be false when not contains special character:', () => {
       it.each(['1234', 'ABC', '123ABCdef'])('"%s"', (input: string) => {
-        expect(String.containsSpecialCharacters(input)).toBeFalsy();
+        expect(String.containsSpecialCharacter(input)).toBeFalsy();
       });
     });
   });
 
-  describe('notContainsSpecialCharacters', () => {
+  describe('notContainsSpecialCharacter', () => {
     describe('Should be true when input is:', () => {
       it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
-        expect(String.notContainsSpecialCharacters(input)).toBeTruthy();
+        expect(String.notContainsSpecialCharacter(input)).toBeTruthy();
       });
     });
 
     describe('Should be false when input contains at least one special character:', () => {
       it.each(['|pipe', '~tilde'])('"%s"', (input: string) => {
-        expect(String.notContainsSpecialCharacters(input)).toBeFalsy();
+        expect(String.notContainsSpecialCharacter(input)).toBeFalsy();
       });
     });
 
     describe('Should be true when not contains special character:', () => {
       it.each(['1234', 'ABC', '123ABCdef'])('"%s"', (input: string) => {
-        expect(String.notContainsSpecialCharacters(input)).toBeTruthy();
+        expect(String.notContainsSpecialCharacter(input)).toBeTruthy();
       });
     });
   });

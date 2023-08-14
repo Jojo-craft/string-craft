@@ -46,7 +46,7 @@ export class String {
   }
 
   /**
-   * Reverse of isNullOrEmpty method.
+   * Reverse of **isNullOrEmpty()** method.
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} False if the value parameter is null or undefined or an empty string (""); otherwise, true.
    */
@@ -72,7 +72,7 @@ export class String {
   }
 
   /**
-   * Reverse of isNullOrBlank method.
+   * Reverse of **isNullOrBlank()** method.
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} False if the value parameter is null or undefined or Empty, or if value consists exclusively of white-space characters; otherwise, true.
    */
@@ -189,7 +189,7 @@ export class String {
   }
 
   /**
-   * Reverse of isNumber method.
+   * Reverse of **isNumber()** method.
    * @param {StringOrNullOrUndefined} value - The value to check.
    * @returns {boolean} True if the value is not a numeric string; otherwise, false.
    */
@@ -215,7 +215,7 @@ export class String {
       return false;
     }
 
-    if (String.containsSpecialCharacters(value)) {
+    if (String.containsSpecialCharacter(value)) {
       return false;
     }
 
@@ -223,7 +223,7 @@ export class String {
   }
 
   /**
-   * Reverse of isAlpha method.
+   * Reverse of **isAlpha()** method.
    * @param {StringOrNullOrUndefined} value - The value to check.
    * @returns {boolean} False if the value consists only of alphabetic characters; otherwise, true.
    */
@@ -236,7 +236,7 @@ export class String {
    * @param {string} value - The string to check.
    * @returns {boolean} True if the string contains at least one special character; otherwise, false.
    */
-  static containsSpecialCharacters(value: StringOrNullOrUndefined): boolean {
+  static containsSpecialCharacter(value: StringOrNullOrUndefined): boolean {
     if (value == undefined) {
       return false;
     }
@@ -246,11 +246,11 @@ export class String {
   }
 
   /**
-   * Reverse of containsSpecialCharacters method.
+   * Reverse of **containsSpecialCharacter()** method.
    * @param {string} value - The string to check.
    * @returns {boolean} False if the string contains at least one special character; otherwise, true.
    */
-  static notContainsSpecialCharacters(value: StringOrNullOrUndefined): boolean {
-    return !String.containsSpecialCharacters(value);
+  static notContainsSpecialCharacter(value: StringOrNullOrUndefined): boolean {
+    return !String.containsSpecialCharacter(value);
   }
 }

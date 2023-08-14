@@ -27,30 +27,30 @@ import { String } from 'string-craft';
 
 ### Fields
 
-|       Name        |                                                 Description                                                 |
-|:-----------------:|:-----------------------------------------------------------------------------------------------------------:|
-| [`empty`](#empty) | Represents the empty string. This field is readonly. The value of this field is the zero-length string, "". |
+|       Name        |                                                  Description                                                  |
+|:-----------------:|:-------------------------------------------------------------------------------------------------------------:|
+| [`EMPTY`](#empty) | Represents the empty string. This field is read-only. The value of this field is the zero-length string (""). |
 
 #### <a id="empty"/> Empty
 
 ###### Exemple
 ```typescript
-console.log(String.empty);
+console.log(String.EMPTY);
 // Output: ""
 ```
 
 ### Methods
 
-|                           Name                            |                                                                     Description                                                                      |
-|:---------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
-|             [`isNullOrEmpty`](#isNullOrEmpty)             |             Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).              |
-|             [`isNullOrBlank`](#isNullOrBlank)             | Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method). |
-|             [`removeAccents`](#removeAccents)             |                                                         Removes accents from a given string.                                                         |
-|                      [`join`](#join)                      |                                 Concatenates an array of strings using the specified separator between each member.                                  |
-|                [`countWords`](#countWords)                |                                                      Counts the number of words in a sentence.                                                       |
-|                  [`isNumber`](#isNumber)                  |                        Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                         |
-|                   [`isAlpha`](#isAlpha)                   |                      Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                      |
-| [`containsSpecialCharacters`](#containsSpecialCharacters) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacters` method).            |
+|                          Name                           |                                                                     Description                                                                      |
+|:-------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+|            [`isNullOrEmpty`](#isNullOrEmpty)            |             Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).              |
+|            [`isNullOrBlank`](#isNullOrBlank)            | Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method). |
+|            [`removeAccents`](#removeAccents)            |                                                         Removes accents from a given string.                                                         |
+|                     [`join`](#join)                     |                                 Concatenates an array of strings using the specified separator between each member.                                  |
+|               [`countWords`](#countWords)               |                                                      Counts the number of words in a sentence.                                                       |
+|                 [`isNumber`](#isNumber)                 |                        Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                         |
+|                  [`isAlpha`](#isAlpha)                  |                      Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                      |
+| [`containsSpecialCharacter`](#containsSpecialCharacter) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).             |
 
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
@@ -126,14 +126,14 @@ console.log(String.isAlpha('abc'));
 // Output: true
 ```
 
-#### <a id="containsSpecialCharacters"/> containsSpecialCharacters
+#### <a id="containsSpecialCharacter"/> containsSpecialCharacter
 
 ###### Exemple
 ```typescript
-console.log(String.containsSpecialCharacters('123abc'));
+console.log(String.containsSpecialCharacter('123abc'));
 // Output: false
 
-console.log(String.containsSpecialCharacters('123abc/'));
+console.log(String.containsSpecialCharacter('123abc/'));
 // Output: true
 ```
 
