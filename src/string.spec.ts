@@ -129,6 +129,10 @@ describe('String', () => {
       expect(String.countWords('Hello world')).toBe(2);
     });
 
+    it('Should have 2 words with 1 number', () => {
+      expect(String.countWords('Hello m4d 10 world!')).toBe(4);
+    });
+
     it('Should have 4 words with special characters', () => {
       expect(String.countWords('hello --   all the world !  !+! WAIT!')).toBe(5);
     });
