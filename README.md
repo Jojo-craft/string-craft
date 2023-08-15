@@ -21,14 +21,13 @@ CI Provider |  Build Status |
 [Stryker-mutator dashboard](https://dashboard.stryker-mutator.io/) | [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FJojo-craft%2Fstring-craft%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/Jojo-craft/string-craft/main) |
 
 
+## Usage
 
-## Install
+### Install
 
 ```shell
 npm i string-craft
 ```
-
-## Usage
 
 ### Import
 
