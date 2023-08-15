@@ -5,23 +5,6 @@ export type Nullable<T> = T | null;
 export type Undefinable<T> = T | undefined;
 
 /**
- * Custom error class for representing argument null or undefined errors.
- * @implements {Error}
- */
-export class ArgumentNullError implements Error {
-  name: string;
-
-  /**
-   * Creates an instance of ArgumentNullError.
-   * @param {string} message - The error message.
-   * */
-  constructor(public message: string) {
-    this.name = 'ArgumentNullError';
-    this.message = message;
-  }
-}
-
-/**
  * Utility class for string-related operations.
  */
 export class String {
@@ -108,8 +91,8 @@ export class String {
 
     return value.replace(accentsRegex, (match) => {
       for (const letter in accentsMap) {
-        if (new RegExp(accentsMap[letter], 'i').test(match)) {
-          return match === match.toLowerCase() ? letter : letter.toUpperCase();
+        if (new RegExp(accentsMap[letter]).test(match)) {
+          return letter;
         }
       }
       return match;
@@ -118,7 +101,7 @@ export class String {
 
   /**
    * Concatenates an array of strings using the specified separator between each member.
-   * @throws {ArgumentNullError} If any of the arguments is null or undefined.
+   * @throws {Error} If any of the arguments is null or undefined.
    * @param {string} separator - The character to use as a separator between the concatenated values.
    * Separator is included in the returned string only if the value has more than one element.
    * @param {...string} values - The array of strings to concatenate.
@@ -131,7 +114,7 @@ export class String {
     let result: string = EMPTY_STRING;
     for (const value of values) {
       if (value == undefined) {
-        throw new ArgumentNullError('Any of the arguments is null or undefined.');
+        throw new Error('Any of the arguments is null or undefined.');
       }
 
       if (result == EMPTY_STRING) {
@@ -160,9 +143,9 @@ export class String {
       return 0;
     }
 
-    const spaceSeparator = /\s+/;
+    const spaceSeparator = /\s/;
     const wordFilter = (word: string): boolean => word != EMPTY_STRING;
-    const nonAlphanumericWordFilter = (word: string): boolean => !/^\W+$/.test(word);
+    const nonAlphanumericWordFilter = (word: string): boolean => !/^\W+/.test(word);
 
     return sentence.split(spaceSeparator).filter(wordFilter).filter(nonAlphanumericWordFilter).length;
   }
@@ -233,7 +216,7 @@ export class String {
       return false;
     }
 
-    const specialCharacters = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?`~]+/;
+    const specialCharacters = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?`~]/;
     return specialCharacters.test(value);
   }
 

@@ -16,12 +16,14 @@
     "string",
     "string operations",
     "string manipulation",
-    "string utility"
+    "string utility",
+    "library"
   ],
   "files": [
     "dist",
     "LICENSE",
     "README.md",
+    "CHANGELOG.md",
     "package.json"
   ],
   "author": "Joann JOUSSELIN",

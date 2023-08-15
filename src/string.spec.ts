@@ -75,7 +75,7 @@ describe('String', () => {
     });
 
     it('Should return same value when has not accents', () => {
-      expect(String.removeAccents('string without accent')).toBe('string without accent');
+      expect(String.removeAccents('String, wItHouT accent.!')).toBe('String, wItHouT accent.!');
     });
 
     it('Should return empty string when input is empty', () => {
@@ -121,12 +121,16 @@ describe('String', () => {
       expect(String.countWords('hello')).toBe(1);
     });
 
+    it('Should have 1 word with spaces at the end', () => {
+      expect(String.countWords('hello   ')).toBe(1);
+    });
+
     it('Should have 2 words separate by blank', () => {
       expect(String.countWords('Hello world')).toBe(2);
     });
 
     it('Should have 4 words with special characters', () => {
-      expect(String.countWords('hello - all the world ! WAIT!')).toBe(5);
+      expect(String.countWords('hello --   all the world !  !+! WAIT!')).toBe(5);
     });
   });
 
@@ -230,7 +234,7 @@ describe('String', () => {
 
   describe('containsSpecialCharacter', () => {
     describe('Should be false when input is:', () => {
-      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+      it.each([null, undefined, '', '  '])('"%s"', (input: StringOrNullOrUndefined) => {
         expect(String.containsSpecialCharacter(input)).toBeFalsy();
       });
     });
@@ -383,14 +387,10 @@ describe('String', () => {
     });
   });
 
-  // TODO : FEATURE LIST:
-
-  // 1: Checks whether data contains only alpha and digit characters. (Alphanumeric)
+  // TODO LIST:
+  // Checks whether data contains only alpha and digit characters. (Alphanumeric)
   // isAlphaDigit('year2023'); => true
   // isAlphaDigit('Hello'); => false
   // isAlphaDigit('1448'); => false
   // isAlphaDigit('40-abc'); => false
-
-  // 2: retourne les mots d'une phrase dans un tableau
-  // wordsToArray('welcome to Earth'); // => ['welcome', 'to', 'Earth']
 });
