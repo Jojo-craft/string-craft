@@ -179,7 +179,7 @@ npm install
 ### Test
 
 #### Unit test
-The code is covered by unit tests.
+The code is covered by unit tests with [Vitest](https://vitest.dev/).
 
 ```shell
 npm run test
