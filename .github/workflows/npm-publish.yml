@@ -1,18 +1,22 @@
 name: Publish to NPM
+
 on:
   release:
     types: [created]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (build)
         uses: actions/checkout@v3
+        
       - name: Setup Node (build)
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
+          
       - name: Install dependencies, run linter, build and tests 🔧
         run: | 
           npm ci
@@ -20,17 +24,20 @@ jobs:
           npm run build
           npm run test:coverage 
           npm run test  
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout (deploy)
         uses: actions/checkout@v3
+        
       - name: Setup Node (deploy)
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
+          
       - name: Publish package on NPM 📦
         run: |
           PACKAGE_VERSION=$(cat package.json|grep version|head -1|awk -F: '{ print $2 }'|sed 's/[", ]//g')

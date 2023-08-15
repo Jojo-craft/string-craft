@@ -1,4 +1,4 @@
-name: test coverage
+name: mutation testing
 
 on: [push]
 
@@ -15,12 +15,9 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
           
-      - name: Run test coverage 🔧
+      - name: Run mutation tests 🔧
         run: | 
           npm ci
-          npm run test:coverage
-          
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+          npm run test:mutation
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
