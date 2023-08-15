@@ -165,3 +165,28 @@ String.containsAlpha('!123&456/');
 ## License
 
 This software is released under the terms of the **MIT license**. See `LICENSE`.
+
+
+## Contribute
+
+### Install
+
+```shell
+npm install
+```
+
+### Test
+
+#### Unit test
+The code is covered by unit tests.
+
+```shell
+npm run test
+```
+
+#### Mutation test
+Possibility to run mutation tests with [Stryker](https://stryker-mutator.io/docs/stryker-js/introduction/).
+```shell
+npm run test:mutation
+```
+

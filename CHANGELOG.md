@@ -7,20 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] 
 
-### TODO
+### 💡 Ideas for a future release
+
+- Methods:
+  - `wordsToArray`
+
+### ⛏️ Work in progress
 
 - Methods:
   - `isAlphaDigit` | `isNotAlphaDigit`
-  - `wordsToArray`
 
 ## [2.0.0] - 2023-08-14
 
-### Changed 
+### 🔧 Changed 
 
 - Fields:
   - **[Breaking change]** rename static read-only field `empty` to `EMPTY`
 
-### Added
+### 💎 Added
 
 - Methods: 
   - `isAlpha` | `isNotAlpha`
@@ -30,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2023-08-13
 
-### Added
+### 💎 Added
 
 - `String` class with:
   - Field:
@@ -42,3 +46,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `join`
     - `countWords`
     - `isNumber` | `isNotNumber`
+
+
+## [Template] - YYYY-MM-dd
+
+### 💎 Added
+for new features
+
+### 🔧 Changed
+for changes in existing functionality
+
+### 🚧 Deprecated
+for soon-to-be removed features
+
+### 🗑️ Removed
+for now removed features
+
+### 🧰 Fixed
+for any bug fixes
+
+### 🦺 Security
+in case of vulnerabilities
+
+--- 
+
+### 💡 Ideas for a future release
+### ⛏️ Work in progress

@@ -64,10 +64,6 @@ export class String {
       return true;
     }
 
-    if (String.isNullOrEmpty(value)) {
-      return true;
-    }
-
     return value.trim().length == 0;
   }
 
@@ -203,10 +199,6 @@ export class String {
    * @returns {boolean} True if the value consists only of alphabetic characters; otherwise, false.
    */
   static isAlpha(value: StringOrNullOrUndefined): boolean {
-    if (value == undefined) {
-      return false;
-    }
-
     if (String.isNullOrBlank(value)) {
       return false;
     }
