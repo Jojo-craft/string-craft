@@ -4,6 +4,7 @@ Simple string manipulation library for TypeScript.
 
 [![npm](https://img.shields.io/npm/v/string-craft)](https://www.npmjs.com/package/string-craft)
 [![npm](https://img.shields.io/npm/dw/string-craft)](https://www.npmjs.com/package/string-craft)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Jojo-craft_string-craft&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Jojo-craft_string-craft)
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/build.yml/badge.svg)
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/eslint.yml/badge.svg)
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml/badge.svg)
