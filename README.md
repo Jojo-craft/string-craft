@@ -1,15 +1,9 @@
 # string-craft
 
-Simple string manipulation library for TypeScript.
-
 [![npm](https://img.shields.io/npm/v/string-craft)](https://www.npmjs.com/package/string-craft)
 [![npm](https://img.shields.io/npm/dw/string-craft)](https://www.npmjs.com/package/string-craft)
 
-
-
-
-
-
+Simple string manipulation library for TypeScript.
 
 `string-craft` is a comprehensive TypeScript library designed to simplify and enhance string manipulation tasks.
 
