@@ -145,7 +145,7 @@ export class String {
 
     const spaceSeparator = /\s/;
     const wordFilter = (word: string): boolean => word != EMPTY_STRING;
-    const nonAlphanumericWordFilter = (word: string): boolean => !/^\W+/.test(word);
+    const nonAlphanumericWordFilter = (word: string): boolean => !/^\W/.test(word);
 
     return sentence.split(spaceSeparator).filter(wordFilter).filter(nonAlphanumericWordFilter).length;
   }
