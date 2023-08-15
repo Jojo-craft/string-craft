@@ -9,6 +9,7 @@ Simple string manipulation library for TypeScript.
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/eslint.yml/badge.svg)
 ![build](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml/badge.svg)
 [![codecov](https://codecov.io/gh/Jojo-craft/string-craft/branch/main/graph/badge.svg?token=QAHEKEG6FS)](https://codecov.io/gh/Jojo-craft/string-craft)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fstryker-mutator%2Fstryker-js%2Fmaster)](https://badge.stryker-mutator.io/github.com/Jojo-craft/string-craft/main)
 
 `string-craft` is a comprehensive TypeScript library designed to simplify and enhance string manipulation tasks.
 
