@@ -5,9 +5,9 @@ Simple string manipulation library for TypeScript.
 [![npm](https://img.shields.io/npm/v/string-craft)](https://www.npmjs.com/package/string-craft)
 [![npm](https://img.shields.io/npm/dw/string-craft)](https://www.npmjs.com/package/string-craft)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Jojo-craft_string-craft&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Jojo-craft_string-craft)
-![build](https://github.com/Jojo-craft/string-craft/actions/workflows/build.yml/badge.svg)
-![build](https://github.com/Jojo-craft/string-craft/actions/workflows/eslint.yml/badge.svg)
-![build](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml/badge.svg)
+[![build](https://github.com/Jojo-craft/string-craft/actions/workflows/build.yml/badge.svg)](https://github.com/Jojo-craft/string-craft/actions/workflows/build.yml)
+[![build](https://github.com/Jojo-craft/string-craft/actions/workflows/eslint.yml/badge.svg)](https://github.com/Jojo-craft/string-craft/actions/workflows/eslint.yml)
+[![build](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml/badge.svg)](https://github.com/Jojo-craft/string-craft/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/Jojo-craft/string-craft/branch/main/graph/badge.svg?token=QAHEKEG6FS)](https://codecov.io/gh/Jojo-craft/string-craft)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FJojo-craft%2Fstring-craft%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/Jojo-craft/string-craft/main)
 
