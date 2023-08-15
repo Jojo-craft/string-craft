@@ -55,6 +55,7 @@ String.EMPTY;
 
 |                          Name                           |                                                                     Description                                                                      |
 |:-------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+|                  [`isEmpty`](#isEmpty)                  |                          Indicates whether the specified string is an empty string ("") (reverse with `isNotEmpty` method).                          |
 |            [`isNullOrEmpty`](#isNullOrEmpty)            |             Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).              |
 |            [`isNullOrBlank`](#isNullOrBlank)            | Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method). |
 |            [`removeAccents`](#removeAccents)            |                                                         Removes accents from a given string.                                                         |
@@ -66,6 +67,21 @@ String.EMPTY;
 |           [`containsNumber`](#containsNumber)           |                Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                 |
 |            [`containsAlpha`](#containsAlpha)            |             Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).              |
 
+
+#### <a id="isEmpty"/> isEmpty
+
+```typescript
+String.isEmpty('value');
+// false
+
+String.isEmpty('  ');
+// false
+
+String.isEmpty('');
+// true
+```
+
+
 #### <a id="isNullOrEmpty"/> isNullOrEmpty
 
 ```typescript
@@ -74,6 +90,9 @@ String.isNullOrEmpty('value');
 
 String.isNullOrEmpty('  ');
 // false
+
+String.isNullOrEmpty(null);
+// true
 
 String.isNullOrEmpty('');
 // true
@@ -86,6 +105,9 @@ String.isNullOrBlank('value');
 // false
 
 String.isNullOrBlank('  ');
+// true
+
+String.isNullOrBlank(null);
 // true
 
 String.isNullOrBlank('');

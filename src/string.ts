@@ -16,6 +16,24 @@ export class String {
   static readonly EMPTY: string = EMPTY_STRING;
 
   /**
+   * Indicates whether the specified string is an empty string ("").
+   * @param {string} value - The string value to check.
+   * @returns {boolean} True if the value parameter is an empty string (""); otherwise, false.
+   */
+  static isEmpty(value: string): boolean {
+    return value == EMPTY_STRING;
+  }
+
+  /**
+   * Indicates whether the specified string is not an empty string ("").
+   * @param {string} value - The string value to check.
+   * @returns {boolean} False if the value parameter is an empty string (""); otherwise, true.
+   */
+  static isNotEmpty(value: string): boolean {
+    return !String.isEmpty(value);
+  }
+
+  /**
    * Indicates whether the specified string is null, undefined or an empty string ("").
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} True if the value parameter is null or undefined or an empty string (""); otherwise, false.
@@ -25,7 +43,7 @@ export class String {
       return true;
     }
 
-    return value == EMPTY_STRING;
+    return String.isEmpty(value);
   }
 
   /**
