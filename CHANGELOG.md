@@ -9,16 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 📦 [Unreleased] 
 
-### 💎 Added
-
-- Methods:
-  - `isEmpty` | `isNotEmpty`
-  - `isBlank` | `isNotBlank`
-  - `isAlphaNumber` | `isNotAlphaNumber`
-  - `containsUpperCase`
-  - `containsLowerCase`
-  - `isBasicStrongPassword`
-
 ### ⛏️ Work in progress
 
 - Methods:
@@ -30,12 +20,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `toBoolean(string): boolean`: parse string to boolean (case insensitive).
 - `removeWords`: remove list of words from a given string.
 - `wordsToArray(string): string[]`: returns the words of a sentence in an array.
-    Example : `wordsToArray('Hello the world') => ['Hello', 'the', 'world']`.
+  Example : `wordsToArray('Hello the world') => ['Hello', 'the', 'world']`.
 - Case style:
   - `camelCase`: convert string to camelCase.
   - `upperCamelCase`: convert string to UpperCamelCase.
   - `snakeCase`: convert string to snake_case.
   - `kebabCase`: convert string to kebab-case.
+
+## 📦 [2.1.0] - 2023-08-16
+
+### 💎 Added
+
+- Methods:
+  - `isEmpty` | `isNotEmpty`
+  - `isBlank` | `isNotBlank`
+  - `isAlphaNumber` | `isNotAlphaNumber`
+  - `containsUpperCase`
+  - `containsLowerCase`
+  - `isBasicStrongPassword`
 
 ---
 
