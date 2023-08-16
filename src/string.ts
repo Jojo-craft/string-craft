@@ -352,10 +352,6 @@ export class String {
       return false;
     }
 
-    if (String.isBlank(value)) {
-      return false;
-    }
-
     for (const character of value) {
       if (String.isNotAlpha(character)) {
         continue;
@@ -376,10 +372,6 @@ export class String {
    */
   static containsLowerCase(value: StringOrNullOrUndefined): boolean {
     if (value == undefined) {
-      return false;
-    }
-
-    if (String.isBlank(value)) {
       return false;
     }
 
@@ -405,10 +397,6 @@ export class String {
    */
   static isBasicStrongPassword(value: StringOrNullOrUndefined): boolean {
     if (value == undefined) {
-      return false;
-    }
-
-    if (String.isBlank(value)) {
       return false;
     }
 
