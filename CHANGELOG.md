@@ -14,24 +14,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Methods:
   - `isEmpty` | `isNotEmpty`
   - `isBlank` | `isNotBlank`
+  - `isAlphaNumber` | `isNotAlphaNumber`
 
 ### ⛏️ Work in progress
 
 - Methods:
-  - `isAlphaDigit` | `isNotAlphaDigit`
+  - `containsUpperCase`: contains at least one uppercase letter.
+  - `containsLowerCase`: contains at least one lowercase letter
+  - `isStrongPassword`: string that contains at least 1 uppercase,
+  - `formatNumber(string): string` (replace '.' by ',')
+    1 lowercase, 1 number, 1 special character and has a minimum length of 12 characters.
 
 ### 💡 Ideas for future release
 
-- `formatNumber(string): string` (replace '.' by ',')
-- `containsUpperCase`: contains at least one uppercase letter.
-- `containsLowerCase`: contains at least one lowercase letter
-- `isStrongPassword`: string that contains at least 1 uppercase,
-  1 lowercase, 1 number, 1 special character and has a minimum length of 12 characters.
 - `toNumber(string): number`: parse string to number.
 - `toBoolean(string): boolean`: parse string to boolean (case insensitive).
+- `removeWords`: remove list of words from a given string.
 - `wordsToArray(string): string[]`: returns the words of a sentence in an array.
     Example : `wordsToArray('Hello the world') => ['Hello', 'the', 'world']`.
-- `removeWords`: remove list of words from a given string.
 - Case style:
   - `camelCase`: convert string to camelCase.
   - `upperCamelCase`: convert string to UpperCamelCase.

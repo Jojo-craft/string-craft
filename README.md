@@ -64,6 +64,7 @@ String.EMPTY;
 |               [`countWords`](#countWords)               |                                                      Counts the number of words in a sentence.                                                       |
 |                 [`isNumber`](#isNumber)                 |                        Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                         |
 |                  [`isAlpha`](#isAlpha)                  |                      Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                      |
+|            [`isAlphaNumber`](#isAlphaNumber)            |           Indicates whether the specified string contains both alphabetic characters and numbers (reverse with `isNotAlphaNumber` method).           |
 | [`containsSpecialCharacter`](#containsSpecialCharacter) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).             |
 |           [`containsNumber`](#containsNumber)           |                Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                 |
 |            [`containsAlpha`](#containsAlpha)            |             Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).              |
@@ -179,6 +180,22 @@ String.isAlpha('123abc');
 
 String.isAlpha('abc');
 // true
+```
+
+#### <a id="isAlphaNumber"/> isAlphaNumber
+
+```typescript
+String.isAlphaNumber('123abc');
+// true
+
+String.isAlphaNumber('abc');
+// false
+
+String.isAlphaNumber('123');
+// false
+
+String.isAlphaNumber('abc-123');
+// false
 ```
 
 #### <a id="containsSpecialCharacter"/> containsSpecialCharacter

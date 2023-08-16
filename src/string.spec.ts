@@ -260,6 +260,12 @@ describe('String', () => {
         expect(String.isAlpha(input)).toBeFalsy();
       });
     });
+
+    describe('Should be false when input contains at least one number:', () => {
+      it.each(['Hello 1', 'h3llo'])('"%s"', (input: string) => {
+        expect(String.isAlpha(input)).toBeFalsy();
+      });
+    });
   });
 
   describe('isNotAlpha', () => {
@@ -443,10 +449,67 @@ describe('String', () => {
     });
   });
 
-  // TODO LIST:
-  // Checks whether data contains only alpha and digit characters. (Alphanumeric)
-  // isAlphaDigit('year2023'); => true
-  // isAlphaDigit('Hello'); => false
-  // isAlphaDigit('1448'); => false
-  // isAlphaDigit('40-abc'); => false
+  describe('isAlphaNumber', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isAlphaNumber(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input contains alphabetic characters and numbers:', () => {
+      it.each(['year2023', '0A'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isAlphaNumber(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input contains only alphabetic characters:', () => {
+      it.each(['Hello', 'hello world'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isAlphaNumber(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input contains only numbers:', () => {
+      it.each(['12', '0', '-99'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isAlphaNumber(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input contains special character:', () => {
+      it.each(['40-abc', 'ABC!123'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isAlphaNumber(input)).toBeFalsy();
+      });
+    });
+  });
+
+  describe('isNotAlphaNumber', () => {
+    describe('Should be true when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotAlphaNumber(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when input contains alphabetic characters and numbers:', () => {
+      it.each(['year2023', '0A'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotAlphaNumber(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input contains only alphabetic characters:', () => {
+      it.each(['Hello', 'hello world'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotAlphaNumber(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be true when input contains only numbers:', () => {
+      it.each(['12', '0', '-99'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotAlphaNumber(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be true when input contains special character:', () => {
+      it.each(['40-abc', 'ABC!123'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isNotAlphaNumber(input)).toBeTruthy();
+      });
+    });
+  });
 });

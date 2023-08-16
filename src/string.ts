@@ -25,7 +25,7 @@ export class String {
   }
 
   /**
-   * Indicates whether the specified string is not an empty string ("").
+   * Reverse of **isEmpty()** method.
    * @param {string} value - The string value to check.
    * @returns {boolean} False if the value parameter is an empty string (""); otherwise, true.
    */
@@ -65,7 +65,7 @@ export class String {
   }
 
   /**
-   * Indicates whether a specified string is not empty or blank.
+   * Reverse of **isBlank()** method.
    * @param {string} value - The string value to check.
    * @returns {boolean} False if the value parameter is Empty or blank; otherwise, true.
    */
@@ -230,6 +230,10 @@ export class String {
       return false;
     }
 
+    if (String.containsNumber(value)) {
+      return false;
+    }
+
     return !Number.isNaN(value);
   }
 
@@ -309,5 +313,40 @@ export class String {
    */
   static notContainsAlpha(value: StringOrNullOrUndefined): boolean {
     return !String.containsAlpha(value);
+  }
+
+  /**
+   * Indicates whether the specified string contains both alphabetic characters and numbers,
+   * and does not contain any special characters.
+   * @param {StringOrNullOrUndefined} value - The string to check.
+   * @returns {boolean} True if the string contains both alphabetic characters and numbers; otherwise false.
+   */
+  static isAlphaNumber(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    if (String.isNullOrBlank(value)) {
+      return false;
+    }
+
+    if (String.isAlpha(value)) {
+      return false;
+    }
+
+    if (String.isNumber(value)) {
+      return false;
+    }
+
+    return !String.containsSpecialCharacter(value);
+  }
+
+  /**
+   * Reverse of **isAlphaNumber()** method.
+   * @param {StringOrNullOrUndefined} value - The string to check.
+   * @returns {boolean} False if the string contains both alphabetic characters and numbers; otherwise true.
+   */
+  static isNotAlphaNumber(value: StringOrNullOrUndefined): boolean {
+    return !String.isAlphaNumber(value);
   }
 }
