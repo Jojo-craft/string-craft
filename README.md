@@ -57,6 +57,7 @@ String.EMPTY;
 |:-------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
 |                  [`isEmpty`](#isEmpty)                  |                          Indicates whether the specified string is an empty string ("") (reverse with `isNotEmpty` method).                          |
 |            [`isNullOrEmpty`](#isNullOrEmpty)            |             Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).              |
+|                  [`isBlank`](#isBlank)                  |            Indicates whether a specified string is empty, or consists only of white-space characters (reverse with `isNotBlank` method).             |
 |            [`isNullOrBlank`](#isNullOrBlank)            | Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method). |
 |            [`removeAccents`](#removeAccents)            |                                                         Removes accents from a given string.                                                         |
 |                     [`join`](#join)                     |                                 Concatenates an array of strings using the specified separator between each member.                                  |
@@ -95,6 +96,19 @@ String.isNullOrEmpty(null);
 // true
 
 String.isNullOrEmpty('');
+// true
+```
+
+#### <a id="isBlank"/> isBlank
+
+```typescript
+String.isBlank('value');
+// false
+
+String.isBlank('  ');
+// true
+
+String.isBlank('');
 // true
 ```
 

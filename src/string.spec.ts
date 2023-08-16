@@ -64,6 +64,34 @@ describe('String', () => {
     });
   });
 
+  describe('isBlank', () => {
+    it('Should be false when there is a string as input', () => {
+      expect(String.isBlank('value')).toBeFalsy();
+    });
+
+    it('Should be true when there is a blank string as input', () => {
+      expect(String.isBlank(' ')).toBeTruthy();
+    });
+
+    it('Should be true when input value is empty', () => {
+      expect(String.isBlank('')).toBeTruthy();
+    });
+  });
+
+  describe('isNotBlank', () => {
+    it('Should be true when there is a string as input', () => {
+      expect(String.isNotBlank('value')).toBeTruthy();
+    });
+
+    it('Should be false when there is a blank string as input', () => {
+      expect(String.isNotBlank(' ')).toBeFalsy();
+    });
+
+    it('Should be false when input value is empty', () => {
+      expect(String.isNotBlank('')).toBeFalsy();
+    });
+  });
+
   describe('isNullOrBlank', () => {
     describe('Should be true when string is:', () => {
       it.each([null, undefined, '', '     '])('"%s"', (input: StringOrNullOrUndefined) => {

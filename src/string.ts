@@ -56,6 +56,24 @@ export class String {
   }
 
   /**
+   * Indicates whether a specified string is empty, or consists only of white-space characters.
+   * @param {string} value - The string value to check.
+   * @returns {boolean} True if the value parameter is Empty, or if value consists exclusively of white-space characters; otherwise, false.
+   */
+  static isBlank(value: string): boolean {
+    return value.trim().length == 0;
+  }
+
+  /**
+   * Indicates whether a specified string is not empty or blank.
+   * @param {string} value - The string value to check.
+   * @returns {boolean} False if the value parameter is Empty or blank; otherwise, true.
+   */
+  static isNotBlank(value: string): boolean {
+    return !String.isBlank(value);
+  }
+
+  /**
    * Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters.
    * @param {string | null | undefined} value - The string value to check.
    * @returns {boolean} True if the value parameter is null or undefined or Empty, or if value consists exclusively of white-space characters; otherwise, false.
@@ -65,7 +83,7 @@ export class String {
       return true;
     }
 
-    return value.trim().length == 0;
+    return String.isBlank(value);
   }
 
   /**
