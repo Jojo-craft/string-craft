@@ -512,4 +512,56 @@ describe('String', () => {
       });
     });
   });
+
+  describe('containsUpperCase', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsUpperCase(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input has no letter of the alphabet:', () => {
+      it.each(['123', '1234!', '!@#$'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsUpperCase(input)).toBeFalsy();
+      });
+    });
+
+    describe('should be true when at least one letter is uppercase:', () => {
+      it.each(['aBc', 'A', 'Abc', 'abcdefgH'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsUpperCase(input)).toBeTruthy();
+      });
+    });
+
+    describe('should be false when there is no uppercase letter:', () => {
+      it.each(['abc', 'a', 'abc', 'abcdefg'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsUpperCase(input)).toBeFalsy();
+      });
+    });
+  });
+
+  describe('containsLowerCase', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsLowerCase(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input has no letter of the alphabet:', () => {
+      it.each(['123', '1234!', '!@#$'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsLowerCase(input)).toBeFalsy();
+      });
+    });
+
+    describe('should be true when at least one letter is lowercase:', () => {
+      it.each(['AbC', 'a', 'aBC', 'ABCDEFGh'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsLowerCase(input)).toBeTruthy();
+      });
+    });
+
+    describe('should be false when there is no lowercase letter:', () => {
+      it.each(['ABC', 'A', 'ABC', 'ABCDEF'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.containsLowerCase(input)).toBeFalsy();
+      });
+    });
+  });
 });

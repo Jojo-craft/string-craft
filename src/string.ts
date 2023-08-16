@@ -341,4 +341,58 @@ export class String {
   static isNotAlphaNumber(value: StringOrNullOrUndefined): boolean {
     return !String.isAlphaNumber(value);
   }
+
+  /**
+   * Indicates whether the specified string contains at least one uppercase letter.
+   * @param {StringOrNullOrUndefined} value - The string to check.
+   * @returns {boolean} True if the string contains at least one uppercase letter; otherwise false.
+   */
+  static containsUpperCase(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    if (String.isBlank(value)) {
+      return false;
+    }
+
+    for (const character of value) {
+      if (String.isNotAlpha(character)) {
+        continue;
+      }
+
+      if (character == character.toUpperCase()) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Indicates whether the specified string contains at least one lowercase letter.
+   * @param {StringOrNullOrUndefined} value - The string to check.
+   * @returns {boolean} True if the string contains at least one lowercase letter; otherwise false.
+   */
+  static containsLowerCase(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    if (String.isBlank(value)) {
+      return false;
+    }
+
+    for (const character of value) {
+      if (String.isNotAlpha(character)) {
+        continue;
+      }
+
+      if (character == character.toLowerCase()) {
+        return true;
+      }
+    }
+
+    return false;
+  }
 }

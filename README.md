@@ -65,6 +65,8 @@ String.EMPTY;
 |           [`containsNumber`](#containsNumber)           |                Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                 |
 |            [`containsAlpha`](#containsAlpha)            |             Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).              |
 | [`containsSpecialCharacter`](#containsSpecialCharacter) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).             |
+|        [`containsUpperCase`](#containsUpperCase)        |                                    Indicates whether the specified string contains at least one uppercase letter.                                    |
+|        [`containsLowerCase`](#containsLowerCase)        |                                    Indicates whether the specified string contains at least one lowercase letter.                                    |
 |            [`removeAccents`](#removeAccents)            |                                                         Removes accents from a given string.                                                         |
 |                     [`join`](#join)                     |                                 Concatenates an array of strings using the specified separator between each member.                                  |
 |               [`countWords`](#countWords)               |                                                      Counts the number of words in a sentence.                                                       |
@@ -228,6 +230,32 @@ String.containsAlpha('!123&456/');
 // false
 ```
 
+#### <a id="containsUpperCase"/> containsUpperCase
+
+```typescript
+String.containsUpperCase('abcDef');
+// true
+
+String.containsUpperCase('abcdef');
+// false
+
+String.containsUpperCase('12!@');
+// false
+```
+
+#### <a id="containsLowerCase"/> containsLowerCase
+
+```typescript
+String.containsLowerCase('ABCdEF');
+// true
+
+String.containsLowerCase('ABCD');
+// false
+
+String.containsLowerCase('12!@');
+// false
+```
+
 ---
 
 ## License
@@ -237,6 +265,9 @@ This software is released under the terms of the **MIT license**. See `LICENSE`.
 ---
 
 ## Contribute
+
+The code is written in TDD and therefore has a nice code coverage by the tests, 
+please keep this cap ;)
 
 ### Install
 
