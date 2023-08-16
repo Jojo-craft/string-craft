@@ -27,6 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `snakeCase`: convert string to snake_case.
   - `kebabCase`: convert string to kebab-case.
 
+---
+
 ## 📦 [2.1.0] - 2023-08-16
 
 ### 💎 Added
