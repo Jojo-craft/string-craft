@@ -222,10 +222,6 @@ export class String {
       return false;
     }
 
-    if (String.isNumber(value)) {
-      return false;
-    }
-
     if (String.containsSpecialCharacter(value)) {
       return false;
     }
@@ -322,10 +318,6 @@ export class String {
    * @returns {boolean} True if the string contains both alphabetic characters and numbers; otherwise false.
    */
   static isAlphaNumber(value: StringOrNullOrUndefined): boolean {
-    if (value == undefined) {
-      return false;
-    }
-
     if (String.isNullOrBlank(value)) {
       return false;
     }
