@@ -53,23 +53,24 @@ String.EMPTY;
 
 ### Methods
 
-|                          Name                           |                                                                     Description                                                                      |
-|:-------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
-|                  [`isEmpty`](#isEmpty)                  |                          Indicates whether the specified string is an empty string ("") (reverse with `isNotEmpty` method).                          |
-|            [`isNullOrEmpty`](#isNullOrEmpty)            |             Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).              |
-|                  [`isBlank`](#isBlank)                  |            Indicates whether a specified string is empty, or consists only of white-space characters (reverse with `isNotBlank` method).             |
-|            [`isNullOrBlank`](#isNullOrBlank)            | Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method). |
-|                 [`isNumber`](#isNumber)                 |                        Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                         |
-|                  [`isAlpha`](#isAlpha)                  |                      Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                      |
-|            [`isAlphaNumber`](#isAlphaNumber)            |           Indicates whether the specified string contains only alphabetic characters and numbers (reverse with `isNotAlphaNumber` method).           |
-|           [`containsNumber`](#containsNumber)           |                Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                 |
-|            [`containsAlpha`](#containsAlpha)            |             Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).              |
-| [`containsSpecialCharacter`](#containsSpecialCharacter) |            Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).             |
-|        [`containsUpperCase`](#containsUpperCase)        |                                    Indicates whether the specified string contains at least one uppercase letter.                                    |
-|        [`containsLowerCase`](#containsLowerCase)        |                                    Indicates whether the specified string contains at least one lowercase letter.                                    |
-|            [`removeAccents`](#removeAccents)            |                                                         Removes accents from a given string.                                                         |
-|                     [`join`](#join)                     |                                 Concatenates an array of strings using the specified separator between each member.                                  |
-|               [`countWords`](#countWords)               |                                                      Counts the number of words in a sentence.                                                       |
+|                          Name                           |                                                                              Description                                                                              |
+|:-------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|                  [`isEmpty`](#isEmpty)                  |                                  Indicates whether the specified string is an empty string ("") (reverse with `isNotEmpty` method).                                   |
+|            [`isNullOrEmpty`](#isNullOrEmpty)            |                      Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).                      |
+|                  [`isBlank`](#isBlank)                  |                     Indicates whether a specified string is empty, or consists only of white-space characters (reverse with `isNotBlank` method).                     |
+|            [`isNullOrBlank`](#isNullOrBlank)            |         Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method).          |
+|                 [`isNumber`](#isNumber)                 |                                 Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                                 |
+|                  [`isAlpha`](#isAlpha)                  |                              Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                               |
+|            [`isAlphaNumber`](#isAlphaNumber)            |                   Indicates whether the specified string contains only alphabetic characters and numbers (reverse with `isNotAlphaNumber` method).                    |
+|    [`isBasicStrongPassword`](#isBasicStrongPassword)    | Indicates whether the specified string contains at least 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character and a minimum length of 12 characters. |
+|           [`containsNumber`](#containsNumber)           |                         Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                         |
+|            [`containsAlpha`](#containsAlpha)            |                      Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).                      |
+| [`containsSpecialCharacter`](#containsSpecialCharacter) |                     Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).                     |
+|        [`containsUpperCase`](#containsUpperCase)        |                                            Indicates whether the specified string contains at least one uppercase letter.                                             |
+|        [`containsLowerCase`](#containsLowerCase)        |                                            Indicates whether the specified string contains at least one lowercase letter.                                             |
+|            [`removeAccents`](#removeAccents)            |                                                                 Removes accents from a given string.                                                                  |
+|                     [`join`](#join)                     |                                          Concatenates an array of strings using the specified separator between each member.                                          |
+|               [`countWords`](#countWords)               |                                                               Counts the number of words in a sentence.                                                               |
 
 
 #### <a id="isEmpty"/> isEmpty
@@ -254,6 +255,28 @@ String.containsLowerCase('ABCD');
 
 String.containsLowerCase('12!@');
 // false
+```
+
+#### <a id="isBasicStrongPassword"/> isBasicStrongPassword
+
+```typescript
+String.isBasicStrongPassword('123456789AB@');
+// false
+
+String.isBasicStrongPassword('123456789ab@');
+// false
+
+String.isBasicStrongPassword('12345678901@');
+// false
+
+String.isBasicStrongPassword('123456789aBC');
+// false
+
+String.isBasicStrongPassword('123abC#$');
+// false
+
+String.isBasicStrongPassword('1234abcefgH!');
+// true
 ```
 
 ---

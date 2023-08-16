@@ -564,4 +564,48 @@ describe('String', () => {
       });
     });
   });
+
+  describe('isBasicStrongPassword', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input has no lowercase letter:', () => {
+      it.each(['123456789AB@'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input has no uppercase letter:', () => {
+      it.each(['123456789ab@'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input has no letter:', () => {
+      it.each(['12345678901@'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when input has no special character:', () => {
+      it.each(['123456789aBC'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when the input does not have the minimum size of 12:', () => {
+      it.each(['123abC#$', '12345678Ab!'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when input satisfies all conditions:', () => {
+      it.each(['1234abcefgH!', 'AAbcdefg234!*'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.isBasicStrongPassword(input)).toBeTruthy();
+      });
+    });
+  });
 });

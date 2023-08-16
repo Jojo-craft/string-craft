@@ -395,4 +395,35 @@ export class String {
 
     return false;
   }
+
+  /**
+   * Indicates whether the specified string contains at least 1 uppercase letter,
+   * 1 lowercase letter, 1 number, 1 special character
+   * and a minimum length of 12 characters.
+   * @param {StringOrNullOrUndefined} value - The string to check.
+   * @returns {boolean} True if the string is a strong password; otherwise false.
+   */
+  static isBasicStrongPassword(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    if (String.isBlank(value)) {
+      return false;
+    }
+
+    if (!String.containsLowerCase(value)) {
+      return false;
+    }
+
+    if (!String.containsUpperCase(value)) {
+      return false;
+    }
+
+    if (String.notContainsSpecialCharacter(value)) {
+      return false;
+    }
+
+    return value.length >= 12;
+  }
 }

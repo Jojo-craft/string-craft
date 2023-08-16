@@ -17,12 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `isAlphaNumber` | `isNotAlphaNumber`
   - `containsUpperCase`
   - `containsLowerCase`
+  - `isBasicStrongPassword`
 
 ### ⛏️ Work in progress
 
 - Methods:
-  - `isStrongPassword`: string that contains at least 1 uppercase,
-    1 lowercase, 1 number, 1 special character and has a minimum length of 12 characters.
   - `formatNumber(string): string` (replace '.' by ',')
 
 ### 💡 Ideas for future release
