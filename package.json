@@ -11,20 +11,30 @@
     "test:coverage": "vitest --coverage",
     "test:mutation": "stryker run"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jojo-craft/string-craft"
+  },
   "keywords": [
     "typescript",
+    "typescript string",
     "string",
     "string operations",
     "string manipulation",
     "string utility",
-    "library"
+    "library",
+    "string library"
   ],
   "files": [
     "dist",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
-    "package.json"
+    "package.json",
+    "tsconfig.json",
+    "stryker.conf.json",
+    ".eslintrc"
   ],
   "author": "Joann JOUSSELIN",
   "license": "MIT",
