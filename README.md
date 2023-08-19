@@ -72,6 +72,7 @@ String.EMPTY;
 |                     [`join`](#join)                     |                                          Concatenates an array of strings using the specified separator between each member.                                          | separator: `string`, values: (`string` &#124; `null` &#124; `undefined`)[] |       `string`        |
 |               [`countWords`](#countWords)               |                                                               Counts the number of words in a sentence.                                                               |            sentence: `string` &#124; `null` &#124; `undefined`             |       `number`        |
 |                 [`toNumber`](#toNumber)                 |                                                 Converts a string representation of a number to a JavaScript number.                                                  |              value: `string` &#124; `null` &#124; `undefined`              | `number` &#124; `NaN` |
+|                [`toBoolean`](#toBoolean)                |                                                         Converts a string representation to a boolean value.                                                          |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
 
 
 #### <a id="isEmpty"/> isEmpty
@@ -320,6 +321,28 @@ String.toNumber('-10');
 ```typescript
 String.toNumber('10.1234');
 // 10.1234
+```
+
+#### <a id="toBoolean"/> toBoolean
+
+```typescript
+String.toBoolean(undefined);
+// false
+```
+
+```typescript
+String.toBoolean(' ');
+// false
+```
+
+```typescript
+String.toBoolean('1');
+// true
+```
+
+```typescript
+String.toBoolean('true');
+// true
 ```
 
 ---

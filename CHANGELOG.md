@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## 📦 [Unreleased] 
+## 📦 [2.2.0] - 2023-08-19
 
 ### 🐞 Fixed
 - Methods:
@@ -16,9 +16,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 💎 Added
 - Methods:
   - `toNumber`
+  - `toBoolean`
 
-### ⛏️ Work in progress
-- `toBoolean(string): boolean`: parse string to boolean (case insensitive).
+---
+
+## 📦 [Unreleased]
 
 ### 💡 Ideas for future release
 

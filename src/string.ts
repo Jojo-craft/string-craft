@@ -431,4 +431,17 @@ export class String {
 
     return +value;
   }
+
+  /**
+   * Converts a string representation to a boolean value.
+   * @param {StringOrNullOrUndefined} value - The string value to convert to a boolean.
+   * @returns {boolean} The converted boolean value. Returns false for invalid inputs.
+   */
+  static toBoolean(value: StringOrNullOrUndefined): boolean {
+    if (value == undefined) {
+      return false;
+    }
+
+    return value.toLowerCase() == 'true' || value == '1';
+  }
 }

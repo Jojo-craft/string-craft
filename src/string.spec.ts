@@ -657,4 +657,30 @@ describe('String', () => {
       });
     });
   });
+
+  describe('toBoolean', () => {
+    describe('Should be false when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toBoolean(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be false when string input is not correct:', () => {
+      it.each(['A', '!', '1234ADF', '@1', '-1', '3'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toBoolean(input)).toBeFalsy();
+      });
+    });
+
+    describe('Should be true when string input is a correct "true" boolean:', () => {
+      it.each(['true', 'True', '1', 'TRUE'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toBoolean(input)).toBeTruthy();
+      });
+    });
+
+    describe('Should be false when string input is a correct "false" boolean:', () => {
+      it.each(['false', 'False', '0', 'FALSE'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toBoolean(input)).toBeFalsy();
+      });
+    });
+  });
 });
