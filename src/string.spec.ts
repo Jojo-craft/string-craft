@@ -211,6 +211,12 @@ describe('String', () => {
         },
       );
     });
+
+    describe('Should be true when input is a decimal number:', () => {
+      it.each(['0.5', '-1234.1234'])('When input is: "%s"', (input: string) => {
+        expect(String.isNumber(input)).toBeTruthy();
+      });
+    });
   });
 
   describe('isNotNumber', () => {
@@ -605,6 +611,49 @@ describe('String', () => {
     describe('Should be true when input satisfies all conditions:', () => {
       it.each(['1234abcefgH!', 'AAbcdefg234!*'])('"%s"', (input: StringOrNullOrUndefined) => {
         expect(String.isBasicStrongPassword(input)).toBeTruthy();
+      });
+    });
+  });
+
+  describe('toNumber', () => {
+    describe('Should have NaN when input is:', () => {
+      it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toNumber(input)).toBe(Number.NaN);
+      });
+    });
+
+    describe('Should have NaN when string input is not a correct number:', () => {
+      it.each(['A', '!', '1234ADF', '@1'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toNumber(input)).toBe(Number.NaN);
+      });
+    });
+
+    describe('Should have NaN when string input is boolean:', () => {
+      it.each(['true', 'True', 'false', 'False', 'TRUE', 'FALSE'])('"%s"', (input: StringOrNullOrUndefined) => {
+        expect(String.toNumber(input)).toBe(Number.NaN);
+      });
+    });
+
+    describe('Should have number when string input is correct number:', () => {
+      it.each([
+        ['0', 0],
+        ['1', 1],
+        ['000078', 78],
+        ['-99', -99],
+        ['1234567890123456', 1234567890123456],
+        ['-1234567890123456', -1234567890123456],
+      ])('"%s"', (input: StringOrNullOrUndefined, expectedNumber: number) => {
+        expect(String.toNumber(input)).toBe(expectedNumber);
+      });
+    });
+
+    describe('Should have number when string input is correct decimal number:', () => {
+      it.each([
+        ['0.5', 0.5],
+        ['3456.123', 3456.123],
+        ['-2345.1234', -2345.1234],
+      ])('"%s"', (input: StringOrNullOrUndefined, expectedNumber: number) => {
+        expect(String.toNumber(input)).toBe(expectedNumber);
       });
     });
   });

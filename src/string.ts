@@ -196,11 +196,11 @@ export class String {
       return false;
     }
 
-    if (String.isNullOrBlank(value)) {
+    if (String.isBlank(value)) {
       return false;
     }
 
-    return Number.isInteger(+value);
+    return Number.isFinite(+value);
   }
 
   /**
@@ -413,5 +413,22 @@ export class String {
     }
 
     return value.length >= 12;
+  }
+
+  /**
+   * Converts a string representation of a number to a JavaScript number.
+   * @param {StringOrNullOrUndefined} value - The string value to convert to a number.
+   * @returns {number | typeof NaN} The converted number, or NaN (Not a number) if the input is not a valid number.
+   */
+  static toNumber(value: StringOrNullOrUndefined): number | typeof NaN {
+    if (value == undefined) {
+      return Number.NaN;
+    }
+
+    if (String.isNotNumber(value)) {
+      return Number.NaN;
+    }
+
+    return +value;
   }
 }

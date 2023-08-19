@@ -53,24 +53,25 @@ String.EMPTY;
 
 ### Methods
 
-|                          Name                           |                                                                              Description                                                                              |                              Input parameters                              |  Return   |
-|:-------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------:|:---------:|
-|                  [`isEmpty`](#isEmpty)                  |                                  Indicates whether the specified string is an empty string ("") (reverse with `isNotEmpty` method).                                   |                              value: `string`                               | `boolean` |
-|            [`isNullOrEmpty`](#isNullOrEmpty)            |                      Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).                      |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` | 
-|                  [`isBlank`](#isBlank)                  |                     Indicates whether a specified string is empty, or consists only of white-space characters (reverse with `isNotBlank` method).                     |                              value: `string`                               | `boolean` |
-|            [`isNullOrBlank`](#isNullOrBlank)            |         Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method).          |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` | 
-|                 [`isNumber`](#isNumber)                 |                                 Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                                 |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|                  [`isAlpha`](#isAlpha)                  |                              Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                               |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|            [`isAlphaNumber`](#isAlphaNumber)            |                   Indicates whether the specified string contains only alphabetic characters and numbers (reverse with `isNotAlphaNumber` method).                    |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|    [`isBasicStrongPassword`](#isBasicStrongPassword)    | Indicates whether the specified string contains at least 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character and a minimum length of 12 characters. |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|           [`containsNumber`](#containsNumber)           |                         Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                         |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|            [`containsAlpha`](#containsAlpha)            |                      Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).                      |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-| [`containsSpecialCharacter`](#containsSpecialCharacter) |                     Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).                     |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|        [`containsUpperCase`](#containsUpperCase)        |                                            Indicates whether the specified string contains at least one uppercase letter.                                             |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|        [`containsLowerCase`](#containsLowerCase)        |                                            Indicates whether the specified string contains at least one lowercase letter.                                             |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
-|            [`removeAccents`](#removeAccents)            |                                                                 Removes accents from a given string.                                                                  |                              value: `string`                               | `string`  |
-|                     [`join`](#join)                     |                                          Concatenates an array of strings using the specified separator between each member.                                          | separator: `string`, values: (`string` &#124; `null` &#124; `undefined`)[] | `string`  |
-|               [`countWords`](#countWords)               |                                                               Counts the number of words in a sentence.                                                               |            sentence: `string` &#124; `null` &#124; `undefined`             | `number`  |
+|                          Name                           |                                                                              Description                                                                              |                              Input parameters                              |        Return         |
+|:-------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------:|:---------------------:|
+|                  [`isEmpty`](#isEmpty)                  |                                  Indicates whether the specified string is an empty string ("") (reverse with `isNotEmpty` method).                                   |                              value: `string`                               |       `boolean`       |
+|            [`isNullOrEmpty`](#isNullOrEmpty)            |                      Indicates whether the specified string is null, undefined or an empty string ("") (reverse with `isNotNullOrEmpty` method).                      |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       | 
+|                  [`isBlank`](#isBlank)                  |                     Indicates whether a specified string is empty, or consists only of white-space characters (reverse with `isNotBlank` method).                     |                              value: `string`                               |       `boolean`       |
+|            [`isNullOrBlank`](#isNullOrBlank)            |         Indicates whether a specified string is null, undefined, empty, or consists only of white-space characters (reverse with `isNotNullOrBlank` method).          |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       | 
+|                 [`isNumber`](#isNumber)                 |                                 Indicates whether the specified string is a valid numeric string (reverse with `isNotNumber` method).                                 |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|                  [`isAlpha`](#isAlpha)                  |                              Indicates whether a given value consists only of alphabetic characters (reverse with `isNotAlpha` method).                               |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|            [`isAlphaNumber`](#isAlphaNumber)            |                   Indicates whether the specified string contains only alphabetic characters and numbers (reverse with `isNotAlphaNumber` method).                    |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|    [`isBasicStrongPassword`](#isBasicStrongPassword)    | Indicates whether the specified string contains at least 1 uppercase letter, 1 lowercase letter, 1 number, 1 special character and a minimum length of 12 characters. |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|           [`containsNumber`](#containsNumber)           |                         Indicates whether the specified string contains at least one numeric digit (reverse with `notContainsNumber` method).                         |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|            [`containsAlpha`](#containsAlpha)            |                      Indicates whether the specified string contains at least one alphabetic character (reverse with `notContainsAlpha` method).                      |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+| [`containsSpecialCharacter`](#containsSpecialCharacter) |                     Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).                     |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|        [`containsUpperCase`](#containsUpperCase)        |                                            Indicates whether the specified string contains at least one uppercase letter.                                             |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|        [`containsLowerCase`](#containsLowerCase)        |                                            Indicates whether the specified string contains at least one lowercase letter.                                             |              value: `string` &#124; `null` &#124; `undefined`              |       `boolean`       |
+|            [`removeAccents`](#removeAccents)            |                                                                 Removes accents from a given string.                                                                  |                              value: `string`                               |       `string`        |
+|                     [`join`](#join)                     |                                          Concatenates an array of strings using the specified separator between each member.                                          | separator: `string`, values: (`string` &#124; `null` &#124; `undefined`)[] |       `string`        |
+|               [`countWords`](#countWords)               |                                                               Counts the number of words in a sentence.                                                               |            sentence: `string` &#124; `null` &#124; `undefined`             |       `number`        |
+|                 [`toNumber`](#toNumber)                 |                                                 Converts a string representation of a number to a JavaScript number.                                                  |              value: `string` &#124; `null` &#124; `undefined`              | `number` &#124; `NaN` |
 
 
 #### <a id="isEmpty"/> isEmpty
@@ -277,6 +278,48 @@ String.isBasicStrongPassword('123abC#$');
 
 String.isBasicStrongPassword('1234abcefgH!');
 // true
+```
+
+#### <a id="toNumber"/> toNumber
+
+```typescript
+String.toNumber(null);
+// NaN
+```
+
+```typescript
+String.toNumber(undefined);
+// NaN
+```
+
+```typescript
+String.toNumber('   ');
+// NaN
+```
+
+```typescript
+String.toNumber('A123@');
+// NaN
+```
+
+```typescript
+String.toNumber('false');
+// NaN
+```
+
+```typescript
+String.toNumber('10');
+// 10
+```
+
+```typescript
+String.toNumber('-10');
+// -10
+```
+
+```typescript
+String.toNumber('10.1234');
+// 10.1234
 ```
 
 ---

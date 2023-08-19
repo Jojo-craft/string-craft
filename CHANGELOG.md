@@ -9,15 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 📦 [Unreleased] 
 
-### ⛏️ Work in progress
-
+### 🐞 Fixed
 - Methods:
-  - `formatNumber(string): string` (replace '.' by ',')
+  - `isNumber`: decimal values did not return true...
+
+### 💎 Added
+- Methods:
+  - `toNumber`
+
+### ⛏️ Work in progress
+- `toBoolean(string): boolean`: parse string to boolean (case insensitive).
 
 ### 💡 Ideas for future release
 
-- `toNumber(string): number`: parse string to number.
-- `toBoolean(string): boolean`: parse string to boolean (case insensitive).
+- `formatNumber(string): string` (replace '.' by ',')
 - `removeWords`: remove list of words from a given string.
 - `wordsToArray(string): string[]`: returns the words of a sentence in an array.
   Example : `wordsToArray('Hello the world') => ['Hello', 'the', 'world']`.
