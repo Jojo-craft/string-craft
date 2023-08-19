@@ -7,18 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## 📦 [2.2.0] - 2023-08-19
-
-### 🐞 Fixed
-- Methods:
-  - `isNumber`: decimal values did not return true...
-
-### 💎 Added
-- Methods:
-  - `toNumber`
-  - `toBoolean`
-
----
 
 ## 📦 [Unreleased]
 
@@ -33,6 +21,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `upperCamelCase`: convert string to UpperCamelCase.
   - `snakeCase`: convert string to snake_case.
   - `kebabCase`: convert string to kebab-case.
+
+---
+
+## 📦 [2.2.0] - 2023-08-19
+
+### 🐞 Fixed
+- Methods:
+  - `isNumber`: decimal values did not return true...
+
+### 💎 Added
+- Methods:
+  - `toNumber`
+  - `toBoolean`
 
 ---
 
