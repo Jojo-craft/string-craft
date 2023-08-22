@@ -616,21 +616,21 @@ describe('String', () => {
   });
 
   describe('toNumber', () => {
-    describe('Should have NaN when input is:', () => {
+    describe('Should have 0 when input is:', () => {
       it.each([null, undefined, '', ' '])('"%s"', (input: StringOrNullOrUndefined) => {
-        expect(String.toNumber(input)).toBe(Number.NaN);
+        expect(String.toNumber(input)).toBe(0);
       });
     });
 
-    describe('Should have NaN when string input is not a correct number:', () => {
+    describe('Should have 0 when string input is not a correct number:', () => {
       it.each(['A', '!', '1234ADF', '@1'])('"%s"', (input: StringOrNullOrUndefined) => {
-        expect(String.toNumber(input)).toBe(Number.NaN);
+        expect(String.toNumber(input)).toBe(0);
       });
     });
 
-    describe('Should have NaN when string input is boolean:', () => {
+    describe('Should have 0 when string input is boolean:', () => {
       it.each(['true', 'True', 'false', 'False', 'TRUE', 'FALSE'])('"%s"', (input: StringOrNullOrUndefined) => {
-        expect(String.toNumber(input)).toBe(Number.NaN);
+        expect(String.toNumber(input)).toBe(0);
       });
     });
 

@@ -418,18 +418,18 @@ export class String {
   /**
    * Converts a string representation of a number to a JavaScript number.
    * @param {StringOrNullOrUndefined} value - The string value to convert to a number.
-   * @returns {number | typeof NaN} The converted number, or NaN (Not a number) if the input is not a valid number.
+   * @returns {number} The converted number, or 0 if the input is not a valid number.
    */
-  static toNumber(value: StringOrNullOrUndefined): number | typeof NaN {
+  static toNumber(value: StringOrNullOrUndefined): number {
     if (value == undefined) {
-      return Number.NaN;
+      return 0;
     }
 
     if (String.isNotNumber(value)) {
-      return Number.NaN;
+      return 0;
     }
 
-    return +value;
+    return Number(value);
   }
 
   /**
