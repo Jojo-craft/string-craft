@@ -126,12 +126,14 @@ export class String {
     const accentsRegex = new RegExp(Object.values(accentsMap).join('|'), 'g');
 
     return value.replace(accentsRegex, (match) => {
+      let result = match;
       for (const letter in accentsMap) {
         if (new RegExp(accentsMap[letter]).test(match)) {
-          return letter;
+          result = letter;
+          break;
         }
       }
-      return match;
+      return result;
     });
   }
 
