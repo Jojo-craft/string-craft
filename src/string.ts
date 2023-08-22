@@ -200,7 +200,7 @@ export class String {
       return false;
     }
 
-    return Number.isFinite(+value);
+    return Number.isFinite(Number(value));
   }
 
   /**
@@ -421,10 +421,6 @@ export class String {
    * @returns {number} The converted number, or 0 if the input is not a valid number.
    */
   static toNumber(value: StringOrNullOrUndefined): number {
-    if (value == undefined) {
-      return 0;
-    }
-
     if (String.isNotNumber(value)) {
       return 0;
     }
