@@ -1,6 +1,6 @@
 {
   "name": "string-craft",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Simple string manipulation library for TypeScript",
   "main": "dist/string.js",
   "types": "dist/string.d.ts",
@@ -34,7 +34,10 @@
     "package.json",
     "tsconfig.json",
     "stryker.conf.json",
-    ".eslintrc"
+    ".eslintrc",
+    ".eslintignore",
+    ".gitignore",
+    ".npmignore"
   ],
   "author": "Joann JOUSSELIN",
   "license": "MIT",

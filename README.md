@@ -68,6 +68,7 @@ String.EMPTY;
 | [`containsSpecialCharacter`](#containsSpecialCharacter) |                     Indicates whether a given string contains at least one special character (reverse with `notContainsSpecialCharacter` method).                     |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
 |        [`containsUpperCase`](#containsUpperCase)        |                                            Indicates whether the specified string contains at least one uppercase letter.                                             |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
 |        [`containsLowerCase`](#containsLowerCase)        |                                            Indicates whether the specified string contains at least one lowercase letter.                                             |              value: `string` &#124; `null` &#124; `undefined`              | `boolean` |
+|             [`valueOrEmpty`](#valueOrEmpty)             |                                Returns an empty string if the value is null, undefined, or blank; otherwise, returns the input value.                                 |              value: `string` &#124; `null` &#124; `undefined`              | `string`  |
 |            [`removeAccents`](#removeAccents)            |                                                                 Removes accents from a given string.                                                                  |                              value: `string`                               | `string`  |
 |                     [`join`](#join)                     |                                          Concatenates an array of strings using the specified separator between each member.                                          | separator: `string`, values: (`string` &#124; `null` &#124; `undefined`)[] | `string`  |
 |               [`countWords`](#countWords)               |                                                               Counts the number of words in a sentence.                                                               |            sentence: `string` &#124; `null` &#124; `undefined`             | `number`  |
@@ -345,6 +346,27 @@ String.toBoolean('true');
 // true
 ```
 
+#### <a id="valueOrEmpty"/> valueOrEmpty
+
+```typescript
+String.valueOrEmpty(undefined);
+// ''
+```
+
+```typescript
+String.valueOrEmpty(null);
+// ''
+```
+
+```typescript
+String.valueOrEmpty('   ');
+// ''
+```
+
+```typescript
+String.valueOrEmpty('pomme de terre');
+// 'pomme de terre'
+```
 
 
 ## License

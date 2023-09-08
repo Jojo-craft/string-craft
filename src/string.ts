@@ -1,8 +1,8 @@
 const EMPTY_STRING = '';
 
-export type StringOrNullOrUndefined = Nullable<string> | Undefinable<string>;
-export type Nullable<T> = T | null;
-export type Undefinable<T> = T | undefined;
+type StringOrNullOrUndefined = Nullable<string> | Undefinable<string>;
+type Nullable<T> = T | null;
+type Undefinable<T> = T | undefined;
 
 /**
  * Utility class for string-related operations.
@@ -441,5 +441,18 @@ export class String {
     }
 
     return value.toLowerCase() == 'true' || value == '1';
+  }
+
+  /**
+   * Returns an empty string if the value is null, undefined, or blank; otherwise, returns the input value.
+   * @param {StringOrNullOrUndefined} value - The value to evaluate.
+   * @returns {string} The input value as a string or an empty string.
+   */
+  static valueOrEmpty(value: StringOrNullOrUndefined): string {
+    if (String.isNullOrBlank(value)) {
+      return String.EMPTY;
+    }
+
+    return <string>value;
   }
 }
